@@ -230,6 +230,14 @@ $(document).ready(function () {
 });
 
 function openWhatsapp() {
+  const customerName = document.getElementById("customerName").value;
+
+  if (customerName === "") {
+    alert("Customer name cannot be empty. Please try again.");
+    return;
+  }
+
+
   // console.log($('#address'));
 
   if ($("#address")[0].value === "") {
@@ -240,42 +248,50 @@ function openWhatsapp() {
     let address = $("#address")[0].value;
     let note = $("#note")[0].value;
   
-    // Calculate the maximum length of the food item names
-    let maxLength = 0;
+    // Calculate the maximum length of the food item names and set a fixed width for the "Name" column
+    let maxNameLength = 0;
     for (var i = 0; i < food.length; i++) {
       let name = food[i][0];
-      if (name.length > maxLength) {
-        maxLength = name.length;
+      if (name.length > maxNameLength) {
+        maxNameLength = name.length;
       }
     }
   
-    let wTxt = "Name".padEnd(maxLength + 5) + "Quantity\n"; // Updated format with variable-width columns
+    const nameColumnWidth = maxNameLength + 5; // Use a fixed width for the "Name" column
+  
+    let wTxt = "Name".padEnd(nameColumnWidth) + "Quantity\n";
   
     for (var i = 0; i < food.length; i++) {
       let name = food[i][0];
-      let quantity = food[i][1];
+      let quantity = food[i][1].toString();
       total = total + food[i][1] * food[i][2];
   
       // Pad the name with spaces to align it properly
-      let nameWithSpaces = name.padEnd(maxLength + 5, " "); // Add 5 extra spaces between name and quantity
+      let nameWithSpaces = name.padEnd(nameColumnWidth, " ");
   
-      wTxt = wTxt + nameWithSpaces + quantity + "\n"; // Add the name and quantity to the output
+      // Calculate the number of spaces needed for the "Quantity" column
+      let quantitySpaces = nameColumnWidth - nameWithSpaces.length + 5; // Add 5 extra spaces for better alignment
+  
+      // Pad the quantity with spaces to align it properly
+      let quantityWithSpaces = quantity.padStart(quantitySpaces, " ");
+  
+      wTxt = wTxt + nameWithSpaces + quantityWithSpaces + "\n"; // Add the name and quantity to the output
     }
-
-    if ($("#note")[0].value === "") {
-      wTxt =
-        wTxt + "\n *Total Bill: " + total + "*" + "\n\n Address: " + address;
-    } else {
-      wTxt =
-        wTxt +
-        "\n *Total Bill: " +
-        total +
-        "*" +
-        "\n\n Address: " +
-        address +
-        "\n Note: " +
-        note;
-    }
+  
+    wTxt =
+      wTxt +
+      "\n *Total Bill: " +
+      total +
+      "ILS*" +
+      "\n\n Customer Name: " +
+      customerName +
+      "\n\n Address: " +
+      address +
+      "\n Note: " +
+      note +
+      "\n\n Thank you for choosing LaPasta, bon appétit!\n\n" +
+      "Visit our website: omerbentzi.github.io/La-Pasta-Website.github.io";
+  
 
     let wTxtEncoded = encodeURI(wTxt);
     window.open("https://wa.me/972584000183?text=" + wTxtEncoded);
