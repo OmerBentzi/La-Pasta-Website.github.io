@@ -239,13 +239,27 @@ function openWhatsapp() {
     let total = 0;
     let address = $("#address")[0].value;
     let note = $("#note")[0].value;
-    let wTxt = "*name*               *quantity* \n";
-
+  
+    // Calculate the maximum length of the food item names
+    let maxLength = 0;
+    for (var i = 0; i < food.length; i++) {
+      let name = food[i][0];
+      if (name.length > maxLength) {
+        maxLength = name.length;
+      }
+    }
+  
+    let wTxt = "Name".padEnd(maxLength + 5) + "Quantity\n"; // Updated format with variable-width columns
+  
     for (var i = 0; i < food.length; i++) {
       let name = food[i][0];
       let quantity = food[i][1];
       total = total + food[i][1] * food[i][2];
-      wTxt = wTxt + name + "      " + quantity + "  \n";
+  
+      // Pad the name with spaces to align it properly
+      let nameWithSpaces = name.padEnd(maxLength + 5, " "); // Add 5 extra spaces between name and quantity
+  
+      wTxt = wTxt + nameWithSpaces + quantity + "\n"; // Add the name and quantity to the output
     }
 
     if ($("#note")[0].value === "") {
