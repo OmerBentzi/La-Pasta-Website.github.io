@@ -1,8 +1,8 @@
 # LaPasta - Online Food Ordering Website
 
 Welcome to **LaPasta**, a web application that allows users to conveniently order delicious Italian cuisine from our restaurant. This repository contains all the code and resources required to run the website smoothly. Whether you're craving pasta, pizza, or any other Italian specialty, LaPasta has got you covered!
+![LaPasta Screenshot](./images/LaPastaLogo.png)
 
-![LaPasta Screenshot]((https://i.pinimg.com/564x/2b/f7/ee/2bf7ee36cd98285c17d3741fed45ae87.jpg))
 Live Site : http://omerbentzi.github.io/La-Pasta-Website.github.io
 ## Table of Contents
 
