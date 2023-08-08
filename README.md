@@ -29,10 +29,11 @@ Live Site : http://omerbentzi.github.io/La-Pasta-Website.github.io
 
 ## Technologies Used
 
-- HTML
-- CSS
-- JavaScript
-- Bootstrap
+- HTML <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML Logo" width="20">
+- CSS <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS Logo" width="20">
+- JavaScript <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript Logo" width="20">
+- Bootstrap <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="Bootstrap Logo" width="20">
+
 
 ## Getting Started
 
