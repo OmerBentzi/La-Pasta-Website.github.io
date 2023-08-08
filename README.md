@@ -56,9 +56,7 @@ Follow these instructions to get the project up and running on your local machin
 
    ```bash
    La-Pasta-Website.github.io
-###Public
-
-   
+ 
 
 3. Open the `index.html` file in your preferred web browser.
 
