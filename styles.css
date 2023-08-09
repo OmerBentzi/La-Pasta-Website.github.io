@@ -391,8 +391,8 @@ a:hover {
   background-color: skyblue;
   top: 0px;
   right: 0px;
-  border-bottom: 20px solid #ffdab3;
-  border-left: 20px solid #ffdab3;
+  border-bottom: 20px solid hsl(0, 0%, 100%);
+  border-left: 20px solid #ffffff;
   border-right: 20px solid #6f1a07;
   border-top: 20px solid #6f1a07;
   position: absolute;
@@ -405,8 +405,8 @@ a:hover {
   display: block;
   width: 0px;
   height: 0px;
-  border-top: 30px solid #ffdab3;
-  border-right: 30px solid #ffdab3;
+  border-top: 30px solid #ffffff;
+  border-right: 30px solid #ffffff;
   border-left: 30px solid #6f1a07;
   border-bottom: 30px solid #6f1a07;
   bottom: 0px;
