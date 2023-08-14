@@ -25,17 +25,21 @@ html {
   box-shadow: none;
 }
 .box {
-  margin-top: 5rem;
+  width: 80%; /* Adjust the width of the box */
+  max-width: 400px; /* Add a max-width for responsiveness */
+  margin: 0 auto; /* Center the box horizontally */
   background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px; /* Add padding for spacing */
 }
+
 input {
-  font-weight: 300;
+  font-weight: 400;
 }
 p {
   font-weight: 700;
 }
 p.subtitle {
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 }
 
 a {
@@ -52,4 +56,16 @@ a:hover {
 
 .footer-text {
   font-weight: initial;
+}
+
+.hero-body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh; 
+  margin: 0; 
+}
+
+.container {
+  margin-top: 10vh; 
 }
