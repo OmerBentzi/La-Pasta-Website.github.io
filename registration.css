@@ -25,11 +25,11 @@ html {
   box-shadow: none;
 }
 .box {
-  width: 80%; /* Adjust the width of the box */
-  max-width: 400px; /* Add a max-width for responsiveness */
-  margin: 0 auto; /* Center the box horizontally */
+  width: 80%; 
+  max-width: 400px; 
+  margin: 0 auto; 
   background-color: rgba(255, 255, 255, 0.1);
-  padding: 20px; /* Add padding for spacing */
+  padding: 20px; 
 }
 
 input {
@@ -62,7 +62,7 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  height: 100vh; 
+  height: 20vh; 
   margin: 0; 
 }
 
