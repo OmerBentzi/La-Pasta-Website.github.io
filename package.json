@@ -1,0 +1,17 @@
+{
+  "name": "la-pasta-website.github.io",
+  "version": "1.0.0",
+  "description": "Welcome to **LaPasta**, a web application that allows users to conveniently order delicious Italian cuisine from our restaurant. This repository contains all the code and resources required to run the website smoothly. Whether you're craving pasta, pizza, or any other Italian specialty, LaPasta has got you covered!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongoose": "^7.4.3",
+    "nodemon": "^3.0.1"
+  }
+}
