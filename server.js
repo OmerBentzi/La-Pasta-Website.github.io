@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+const async = require('hbs/lib/async');
 
 
 const app = express();
@@ -20,7 +21,7 @@ mongoose.connect('mongodb://localhost:27017/mydb', {
 var db = mongoose.connection;
 db.on('error', () => console.log("Error in connecting to database"));
 db.once('open', () => console.log("Connected to database"));
-app.post('/sign_up', (req, res) => {
+app.post('/sign_up', async(req, res) => {
     var name = req.body.name;
     var email = req.body.email;
     var phone = req.body.phone;
@@ -32,13 +33,13 @@ app.post('/sign_up', (req, res) => {
         "phone": phone,
         "password": password
     }
-    db.collection('users').insertOne(data, (err, collection) => {
+    await db.collection('users').insertOne(data, (err, collection) => {
         if(err) {
             throw err;
         }
         console.log("Record inserted successfully");
     });
-    return res.redirect('form.html')
+    return res.redirect('form_sucsess.html')
 })
 
 app.get('/', (req, res) => {
