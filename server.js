@@ -42,6 +42,7 @@ app.post('/sign_up', async(req, res) => {
     return res.redirect('form_sucsess.html')
 })
 
+
 app.get('/', (req, res) => {
     res.set({
         'Access-Control-Allow-Origin': '*'
