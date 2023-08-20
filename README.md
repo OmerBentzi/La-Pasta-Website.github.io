@@ -4,7 +4,7 @@ Welcome to **LaPasta**, a web application that allows users to conveniently orde
 
 What so special about the website? is that you have a reservation system that is connected to WhatsApp and the details of the reservation go directly to the owner of the restaurant.
 
-<img src="./images/LaPastaLogo.png" alt="LaPasta Logo" width="200">
+<img src="./public/images/LaPastaLogo.png" alt="LaPasta Logo" width="200">
 
 
 Live Site : http://omerbentzi.github.io/La-Pasta-Website.github.io
