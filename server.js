@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 const async = require('hbs/lib/async');
+const hbs = require('hbs');
 
 
 const app = express();
@@ -33,7 +34,7 @@ app.post('/sign_up', async(req, res) => {
         "phone": phone,
         "password": password
     }
-    await db.collection('users').insertOne(data, (err, collection) => {
+db.collection('users').insertOne(data, (err, collection) => {
         if(err) {
             throw err;
         }
