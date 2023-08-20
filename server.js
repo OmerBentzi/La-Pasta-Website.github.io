@@ -13,10 +13,11 @@ app.use(bodyParser.urlencoded({
     extended: true
 }))
 
-mongoose.connect('mongodb://localhost:27017/mydb', {
+mongoose.connect('mongodb://127.0.0.1:27017/mydb', {
     useNewUrlParser: true,
     useUnifiedTopology: true
-    });
+});
+
 
 
 var db = mongoose.connection;

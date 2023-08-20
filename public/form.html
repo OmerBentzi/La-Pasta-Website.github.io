@@ -1,42 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignUp Form - MongoDB</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="form.css">
-</head>
-
-<body>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-
-            </div>
-            <div class="col-md-6 main">
-                <form action="/sign_up" method="POST">
-                    <h2>SignUp Form</h2>
-                    <input type="text" class="box" id="name" name="name" placeholder="Name" required />
-                    <br>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+    <title>Registration</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css" />
+    <link rel="stylesheet" href="./form.css" />
+    
+  </head>
+  <body>
+    <a href="index.html"><i class="fa fa-home" aria-hidden="true" style="color: black;font-size: 40px;"></i></a>
+    <section class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <div class="column is-4 is-offset-4">
+            <div class="box">
+              <form action="/sign_up" method="POST"> 
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                      <input type="text" class="box" id="name" name="name" placeholder="Name" required />
+                      <span class="icon is-medium is-left">
+                      </span>
+                      <span class="icon is-medium is-right">
+                      </span>
+                    </p>
+                  </div>
+                <div class="field">
+                  <p class="control has-icons-left has-icons-right">
                     <input type="text" class="box" id="email" name="email" placeholder="Email" required />
-                    <br>
-                    <input type="text" class="box" id="phone" name="phone" placeholder="Mobile" required />
-                    <br>
-                    <input type="text" class="box" id="password" name="password" placeholder="Password" required />
-                    <br>
-                    <input type="submit" value="Submit" id="submit" />
-                </form>
+
+                    <span class="icon is-medium is-left">
+                    </span>
+                    <span class="icon is-medium is-right">
+                    </span>
+                  </p>
+                </div>
+                <div class="field">
+                  <p class="control has-icons-left">
+                    <input type="text" class="box" id="phone" name="phone" placeholder="Mobile" required />                    <span class="icon is-small is-left">
+                    </span>
+                    <span class="icon is-medium is-right">
+                    </span>
+                  </p>
+                </div>
+                <div class="field">
+                  <p class="control has-icons-left">
+                    <input type="password" class="box" id="password" name="password" placeholder="Password" required />
+                    </span>
+                   
+                  </p>
+                </div>
+                  </p>
+                </div>
+                <div class="field">
+                
+                </div>
+                <button class="button is-block is-info is-large is-fullwidth">Sign Up</button><br />
+                <p class="subtitle is-5" style="color: rgb(255, 255, 255);">Sign Up using Social Media</p>
+                <div class="buttons is-centered" style="margin-bottom: 0;">
+                  <a class="button is-medium is-facebook">
+                    <span class="icon">
+                      <i class="fab fa-facebook-f fa-lg"></i>
+                    </span>
+                  </a>
+                  <a class="button is-medium is-twitter">
+                    <span class="icon">
+                      <i class="fab fa-twitter fa-lg"></i>
+                    </span>
+                  </a>
+                  <a class="button is-medium is-github">
+                    <span class="icon">
+                      <i class="fab fa-github fa-lg"></i>
+                    </span>
+                  </a>
+                </div>
+              </form>
             </div>
-            <div class="col-md-3">
+            <p class="has-text-grey">
+              <a href="contactus.html">Need Help?</a>
+            </p>
+            <div class="languages select is-small is-rounded">
+              <select>
+                <option selected>English</option>
+                <option>French</option>
+                <option>German</option>
+                <option>Italian</option>
+              </select>
             </div>
+          </div>
         </div>
-    </div>
-
-</body>
-
+      </div>
+      <div class="hero-foot">
+        <div class="container has-text-centered">
+          <p class="footer-text">
+            
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
