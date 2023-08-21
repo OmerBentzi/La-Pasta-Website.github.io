@@ -290,7 +290,7 @@ function openWhatsapp() {
       "\n Note: " +
       note +
       "\n\n Thank you for choosing LaPasta, bon appétit!\n\n" +
-      "Visit our website: omerbentzi.github.io/La-Pasta-Website.github.io";
+      "Visit our website: https://omerbentzi.github.io/La-Pasta-Website.github.io/public/index.html";
   
 
     let wTxtEncoded = encodeURI(wTxt);
