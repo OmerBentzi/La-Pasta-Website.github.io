@@ -21,8 +21,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/mydb', {
 
 
 var db = mongoose.connection;
-db.on('error', () => console.log("Error in connecting to database"));
-db.once('open', () => console.log("Connected to database"));
+db.on('error', () => console.log("Error in Connecting To Database"));
+db.once('open', () => console.log("Connected To MongoDB Database"));
 app.post('/sign_up', async(req, res) => {
     var name = req.body.name;
     var email = req.body.email;
@@ -39,7 +39,7 @@ db.collection('users').insertOne(data, (err, collection) => {
         if(err) {
             throw err;
         }
-        console.log("Record inserted successfully");
+        console.log("Data Inserted Successfully");
     });
     return res.redirect('form_sucsess.html')
 })
