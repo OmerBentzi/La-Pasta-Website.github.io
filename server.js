@@ -69,7 +69,7 @@ db.collection('users').findOne({ email: data.email ,password: data.password}, (e
                 // Incorrect password
                 console.log("Incorrect password");
                 //add an messege into the login page that the password is incorrect
-                alert("Incorrect password");
+                
                 // You can handle the incorrect password case here, like showing an error message
                 return res.redirect('login.html'); // Redirect to login page with error message
             }
@@ -79,17 +79,19 @@ db.collection('users').findOne({ email: data.email ,password: data.password}, (e
 app.get('/sign_up', (req, res) => {
     res.set({
         'Access-Control-Allow-Origin': '*'
-    })
-    return res.redirect('form.html');
-    
-}).listen(3000);
+    });
+    return res.sendFile('/form.html');
+
+});
 
 app.get('/log_in', (req, res) => {
     res.set({
         'Access-Control-Allow-Origin': '*'
-    })
-    return res.redirect('login.html');
-}).listen(3000);
+    });
+    return res.sendFile('/login.html');
+});
 
-console.log("Server running at "+ 3000);
-
+const port = 3000;
+app.listen(port, () => {
+    console.log(`Server running at port ${port}`);
+});
