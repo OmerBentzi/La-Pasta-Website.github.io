@@ -228,7 +228,6 @@ $(document).ready(function () {
     );
   }
 });
-
 function openWhatsapp() {
   const customerName = document.getElementById("customerName").value;
 
