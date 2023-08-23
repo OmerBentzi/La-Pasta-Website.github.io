@@ -35,16 +35,33 @@ app.post('/sign_up', async(req, res) => {
         "phone": phone,
         "password": password
     }
-db.collection('users').insertOne(data, (err, collection) => {
-        if(err) {
+
+    db.collection('users').findOne({email: data.email}, (err, user) => {
+        if (err) {
             throw err;
         }
-        //if the data inserted successfully
-        console.log("Data Inserted Successfully");
-        console.log(collection);
-    });
-    return res.redirect('form_sucsess.html')
+    
+        if (user){
+            console.log("Email already exists")
+            return res.send("The Email already exists");
+        }
+        else {
+            db.collection('users').insertOne(data, (err, collection) => {
+                if(err) {
+                    throw err;
+                }
+                //if the data inserted successfully
+                console.log("Data Inserted Successfully");
+                console.log(collection);
+                return res.send("Sign up Succsessfully");
+                
+            });
+        }
+       
+            });
 })
+
+
 app.post('/log_in', async(req, res) => {
     var email = req.body.email;
     var password = req.body.password; 
@@ -62,16 +79,14 @@ db.collection('users').findOne({ email: data.email ,password: data.password}, (e
         // If user with the provided email exists
                 // Passwords match, log in successfully
                 console.log("Log In Successfully");
-                return res.redirect('index.html');
+                return res.send("Log In Successfully");
    }
    
    else {
                 // Incorrect password
-                console.log("Incorrect password");
-                //add an messege into the login page that the password is incorrect
-                
+                console.log("Incorrect password");   
                 // You can handle the incorrect password case here, like showing an error message
-                return res.redirect('login.html'); // Redirect to login page with error message
+                return res.send("Incorrect Email or Password"); // Redirect to login page with error message
             }
         });
     });

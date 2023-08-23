@@ -18,7 +18,6 @@
           <div class="column is-4 is-offset-4">
             <div class="box">
               <p class="subtitle is-4">Please login to proceed.</p>        
-              <form action="/log_in" method="POST">
                 <div class="field">
                   <p class="control has-icons-left has-icons-right">
                     <input class="input is-medium" type="email" id="email" name="email" placeholder="Email" required/>
@@ -44,7 +43,7 @@
                     Remember me
                   </label>
                 </div>
-                <button class="button is-block is-info is-large is-fullwidth">Login</button><br />
+                <button class="button is-block is-info is-large is-fullwidth" id="Login">Login</button><br />
                 <p class="subtitle is-5" style="color: white;">Login using Social Media</p>
                 <div class="buttons is-centered" style="margin-bottom: 0;">
                   <a class="button is-medium is-facebook">
@@ -63,7 +62,6 @@
                     </span>
                   </a>
                 </div>
-              </form>
             </div>
             <p class="has-text-grey">
               <a href="form.html">Sign Up</a> &nbsp;·&nbsp; <a href="#">Forgot Password</a> &nbsp;·&nbsp;
@@ -88,5 +86,6 @@
         </div>
       </div>
     </section>
+    <script src="./login.js"></script>
   </body>
 </html>
