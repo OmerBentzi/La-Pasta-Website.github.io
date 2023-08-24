@@ -1,2169 +1,1590 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <title>LaPasta</title>
-    <link
-      rel="shortcut icon"
-      href="images/LaPastaLogo.png"
-      type="image/x-icon"
-    />
 
-    <!-- META -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta
-      name="LaPasta"
-      
-    />
-    <meta name="description" content="Food Ordering Website. The 'LaPasta' has
+<head>
+  <title>LaPasta</title>
+  <link rel="shortcut icon" href="images/LaPastaLogo.png" type="image/x-icon" />
+
+  <!-- META -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="LaPasta" />
+  <meta name="description" content="Food Ordering Website. The 'LaPasta' has
     been practiced to override the prevalent problems in manual systems. This
     website is compatible to finalize and, in some cases, reduces the
     difficulties faced by this existing system.>
-    <meta name="robots" content="all" />
-    <meta name="googlebot" content="all" />
+    <meta name=" robots" content="all" />
+  <meta name="googlebot" content="all" />
 
-    <!-- GOOGLE FONTS -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Ubuntu:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Ubuntu:wght@400;500;700&display=swap"
+    rel="stylesheet" />
 
-    <!-- CDN FONTS  -->
-    <link href="https://fonts.cdnfonts.com/css/elinga" rel="stylesheet" />
+  <!-- CDN FONTS  -->
+  <link href="https://fonts.cdnfonts.com/css/elinga" rel="stylesheet" />
 
-    <!-- FONTAWESOME -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
-      crossorigin="anonymous"
-    />
+  <!-- FONTAWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
 
-    <!-- BOOTSTRAP -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 
-    <!-- CSS -->
-    <link href="https://copyfonts.com/fonts/attari-salees.html" />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
+  <!-- CSS -->
+  <link href="https://copyfonts.com/fonts/attari-salees.html" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
 
-  <body>
-    <div id="loading">
-      <img
-        id="loading-image"
-        src="https://user-images.githubusercontent.com/62802231/194802891-66d7c782-9765-419d-964b-b6bf6323b95a.gif"
-        alt="Loading..."
-      />
-    </div>
+<body>
+  <div id="loading">
+    <img id="loading-image"
+      src="https://user-images.githubusercontent.com/62802231/194802891-66d7c782-9765-419d-964b-b6bf6323b95a.gif"
+      alt="Loading..." />
+  </div>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <div class="container">
-       
-     
-        <a class="navbar-brand" href="index.html">LaPasta</a>
-        
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link px-3" href="#"
-                >Home <span class="sr-only">(current)</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-4" href="#categorySection">Categories</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-4" href="#healthySection">Hygiene</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-4" href="contactus.html">Contact Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-4" href="login.html">Login</a>
-            </li>
-          </ul>
-        </div>
-        <span
-          class="shoppingCart"
-          data-toggle="modal"
-          data-target="#exampleModal"
-        >
-          <i class="fas fa-shopping-cart"></i>
-          <span class="shoppingCartAfter">0</span>
-        </span>
+
+      <a class="navbar-brand" href="index.html">LaPasta</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link px-3" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-4" href="#categorySection">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-4" href="#healthySection">Hygiene</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-4" href="contactus.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-4" href="login.html">Login</a>
+          </li>
+        </ul>
       </div>
-    </nav>
+      <span class="shoppingCart" data-toggle="modal" data-target="#exampleModal">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="shoppingCartAfter">0</span>
+      </span>
+    </div>
+  </nav>
 
-    <a id="scrollToTop" class="btn"><i class="fas fa-caret-up"></i></a>
+  <a id="scrollToTop" class="btn"><i class="fas fa-caret-up"></i></a>
 
-    <div class="container home-container">
-      <section id="homeSection" class="d-flex justify-content-center">
-        <div class="row homeRow">
-          <div class="col-lg-6 homeTxtCol">
-            <h1 class="homeHeading">
-              Welcome Back To Pasta Paradise!<br />
-              <span data-text="LaPasta">LaPasta</span>
-              <br />
-              
-            </h1>
+  <div class="container home-container">
+    <section id="homeSection" class="d-flex justify-content-center">
+      <div class="row homeRow">
+        <div class="col-lg-6 homeTxtCol">
+          <h1 class="homeHeading">
+            Welcome Back To Pasta Paradise!<br />
+            <span data-text="LaPasta">LaPasta</span>
             <br />
-            <div class="homeBtnDiv">
-              <a href="#categorySection" class="btn homeBtn">Order Now</a>
-            </div>
-          </div>
-          <div class="col-lg-6 homeImgCol">
-            <img class="homeImg" src="./images/pasta-penne-italian-food-png.png " alt="Pasta" />
+
+          </h1>
+          <br />
+          <div class="homeBtnDiv">
+            <a href="#categorySection" class="btn homeBtn">Order Now</a>
           </div>
         </div>
-      </section>
+        <div class="col-lg-6 homeImgCol">
+          <img class="homeImg" src="./images/pasta-penne-italian-food-png.png " alt="Pasta" />
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <br />
+
+  <section id="categorySection">
+    <div class="container">
+      <h1>
+        <span><b style="color: rgb(169, 33, 33);">Menu</b></span>
+      </h1>
+      <div class="row gutters-40">
+        <div class="col-lg-4 col-sm-4 col-4">
+          <div class="product-box-layout4 momos">
+            <div class="item-figure">
+              <img src="./images/Spaghetti.jpg" alt="Pasta" width="100%" height="100%" />
+            </div>
+            <div class="item-content">
+              <h2 class="card-title">La-Pasta</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-sm-4 col-4">
+          <div class="product-box-layout4 chinese">
+            <div class="item-figure">
+              <img src="./images/pizza2.jpg" alt="Category" width="100%" height="100%" />
+            </div>
+            <div class="item-content">
+              <h2 class="card-title">La-Pizza</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-sm-4 col-4">
+          <div class="product-box-layout4 beverages">
+            <div class="item-figure">
+              <img src="./images/beverages.webp" alt="Category" width="100%" height="100%" />
+            </div>
+            <div class="item-content">
+              <h2 class="card-title">Drinks</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MENU STARTS HERE -->
+      <div class="menuDiv">
+        <!-- MODAL -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <div class="row paymentInfoRow">
+                    <div class="col paymentInfo">
+                      <span class="checkIcon"><i class="fas fa-check-circle"></i></span>
+                      Select Items From Menu
+                    </div>
+                    <div class="col paymentInfo">
+                      <span class="checkIcon"><i class="fa-brands fa-whatsapp"></i></span>
+                      Place order via Whatsapp
+                    </div>
+                    <div class="col paymentInfo">
+                      <span class="checkIcon"><i class="fa-brands fa-google-pay"></i>
+                      </span>
+                      Pay using Google Pay.
+                    </div>
+                  </div>
+
+                  <hr class="cartHr" />
+
+                  <div class="cartContentDiv">
+                    <h1>Your Cart is Empty!</h1>
+                  </div>
+
+                  <div class="userInfoDiv">
+                    <div class="mb-3 px-2">
+                      <label for="customerName">Customer Name *</label> <br />
+                      <input type="text" class="form-control" id="customerName" placeholder="Enter your name" />
+                    </div>
+                    <div class="mb-3 px-2">
+                      <label for="address">Address *</label> <br />
+                      <textarea type="text" class="form-control" id="address"
+                        placeholder="Enter your Address"></textarea>
+                    </div>
+                    <div class="mb-3 px-2">
+                      <label for="note">Note (optional)</label> <br />
+                      <textarea type="text" class="form-control" id="note"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="totalAmountDiv"></div>
+                <button type="button" class="btn btn-secondary" onclick="location.reload()">
+                  Clear Cart
+                </button>
+                <a class="btn btn-primary" onclick="openWhatsapp()">
+                  Order Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="momos">
+          <div class="row menuHeading">
+            <div class="col-12">
+              <h1></h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-12">
+              <div class="card">
+                <h2 class="card-title">Pasta</h2>
+                <div class="card-body">
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Rose Pasta
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>51
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Tometo Pasta
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>49
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Mushroom Pasta
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>48
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Pink Pasta
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>50
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Aligo Olio
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>39
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Carbonara
+                        <span>
+                          <img class="nonVegIcon" src="./images/non-veg.webp" alt="non-veg icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>49
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Spicy Tomato Pasta
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>51
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Salmon Pasta
+                        <span>
+                          <img class="nonVegIcon" src="./images/non-veg.webp" alt="non-veg icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>55
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-12">
+              <div class="card">
+                <h2 class="card-title">First Course</h2>
+                <div class="card-body">
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Green Salad
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>25
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Arabric Salad
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>26
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" sstyle="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Fries
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>19
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        SweetPoteto Fries
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>20
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Arancini
+                        <span>
+                          <img class="nonVegIcon" src="./images/non-veg.webp" alt="non-veg icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>28
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Salmon Arancini Bites
+                        <span>
+                          <img class="nonVegIcon" src="./images/non-veg.webp" alt="non-veg icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>35
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Smoked Salmon Bruschetta
+                        <span>
+                          <img class="nonVegIcon" src="./images/non-veg.webp" alt="non-veg icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>35
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Corn Polenta
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>28
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row checkOutRow">
+            <button type="button" class="btn knowMoreBtn" data-toggle="modal" data-target="#exampleModal">
+              <i class="fas fa-shopping-cart"></i> Go to Cart
+            </button>
+          </div>
+        </div>
+
+        <div id="chinese">
+          <div class="row menuHeading">
+            <div class="col-12">
+              <h1></h1>
+            </div>
+            <!-- Button trigger modal -->
+            <span class="shoppingCart" data-toggle="modal" data-target="#exampleModal">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="shoppingCartAfter">0</span>
+            </span>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="card">
+                <h2 class="card-title">Pizzas</h2>
+                <div class="card-body">
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Margherita Pizza
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>50
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Veggie Supreme Pizza
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>52
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        White Pizza<span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>54
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Hawaiian Pizza
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>49
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Mushroom Pizza
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>48
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Garlic Pizza
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>41
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Black Ollive Pizza
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>42
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Tuna Pizza
+                        <span>
+                          <img class="nonVegIcon" src="./images/non-veg.webp" alt="non-veg icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>46
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="card">
+                <h2 class="card-title">Appetizers</h2>
+                <div class="card-body">
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Chilli Potato<span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>25
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Bruschetta
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>36
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Caprese Salad
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>35
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Stuffed Mushrooms
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>27
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Fried Ravioli<span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>34
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Polenta Crostini<span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>35
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Caesar Salad<span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>37
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Fried Mozzarella Sticks<span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>35
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+
+                  <div class="row foodItem"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card">
+                <h2 class="card-title">Desserts</h2>
+                <div class="card-body">
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Tiramisu<span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>25
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Gelato
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>18
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Affogato
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>17
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Biscotti
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>23
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Cannoli<span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>35
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Chocolate Cake
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>31
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Creme Brulee
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>29
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Lemon Pie
+                        <span>
+                          <img class="vegIcon" src="./images/veg.webp" alt="veg-icon" />
+                        </span>
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>31
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row checkOutRow">
+            <button type="button" class="btn knowMoreBtn" data-toggle="modal" data-target="#exampleModal">
+              <i class="fas fa-shopping-cart"></i> Go to Cart
+            </button>
+          </div>
+        </div>
+
+        <div id="beverages">
+          <div class="row menuHeading">
+            <div class="col-12">
+              <h1></h1>
+            </div>
+            <!-- Button trigger modal -->
+            <span class="shoppingCart" data-toggle="modal" data-target="#exampleModal">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="shoppingCartAfter">0</span>
+            </span>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-12">
+              <div class="card">
+                <h2 class="card-title">Drinks</h2>
+                <div class="card-body">
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Zero Coke
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>12
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Coke
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>12
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Fanta
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>12
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Sprite
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>11
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Sparkling Water
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>9
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>
+                        Mineral Water
+                      </p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>9
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-12">
+              <div class="card">
+                <h2 class="card-title">Cocktails</h2>
+                <div class="card-body">
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>Midnight Beauty</p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>41
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>Mojito</p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>43
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>Pink Lemonade</p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>40
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>Silver Lining</p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>39
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>Sweet Memories</p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>49
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                  <hr class="foodItemHr" />
+                  <div class="row foodItem">
+                    <div class="col-9 foodItemName">
+                      <p>Virgin Mojito</p>
+                      <p class="text-muted-small">
+                        <i class="fa fa-ils"></i>39
+                      </p>
+                    </div>
+                    <div class="col-3 addCol">
+                      <span class="menuBtn minus"><i class="fas fa-minus"></i></span>
+                      <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
+                      <span class="menuBtn plus"><i class="fas fa-plus"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row checkOutRow">
+            <button type="button" class="btn knowMoreBtn" data-toggle="modal" data-target="#exampleModal">
+              <i class="fas fa-shopping-cart"></i> Go to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="healthySection">
+    <h1 class="hygiene-title">
+      <span><b style="color: rgb(169, 33, 33);">HYGIENE</b></span>
+    </h1>
+    <div class="eatSure container">
+      <div class="row">
+
+        <div class="col-sm-2 col-6 borderLeft">
+          <div class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" enable-background="new 0 0 515.556 515.556"
+              height="512px" viewBox="0 0 515.556 515.556" width="512px">
+              <g>
+                <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
+                  data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"></path>
+              </g>
+            </svg>
+
+          </div>
+          <div class="text">Zero Trans Fats</div>
+        </div>
+
+
+
+        <div class="col-sm-2 col-6 borderLeft">
+          <div class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" enable-background="new 0 0 515.556 515.556"
+              height="512px" viewBox="0 0 515.556 515.556" width="512px">
+              <g>
+                <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
+                  data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"></path>
+              </g>
+            </svg>
+
+          </div>
+          <div class="text">Medically Certified Kitchen Staff</div>
+        </div>
+
+        <div class="col-sm-2 col-6 borderLeft">
+          <div class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" enable-background="new 0 0 515.556 515.556"
+              height="512px" viewBox="0 0 515.556 515.556" width="512px">
+              <g>
+                <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
+                  data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="text">200+ Stringent Quality Checks</div>
+        </div>
+
+        <div class="col-sm-2 col-6 borderLeft">
+          <div class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" enable-background="new 0 0 515.556 515.556"
+              height="512px" viewBox="0 0 515.556 515.556" width="512px">
+              <g>
+                <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
+                  data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="text">No Artificial Colours or Flavours</div>
+        </div>
+
+        <div class="col-sm-2 col-6 borderLeft">
+          <div class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" enable-background="new 0 0 515.556 515.556"
+              height="512px" viewBox="0 0 515.556 515.556" width="512px">
+              <g>
+                <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
+                  data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="text">Double Sealed Packaging <br /><br /></div>
+        </div>
+        <div class="col-sm-2 col-6 borderLeft">
+          <div class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" enable-background="new 0 0 515.556 515.556"
+              height="512px" viewBox="0 0 515.556 515.556" width="512px">
+              <g>
+                <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
+                  data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="text">Premium Ingredients <br /><br /></div>
+        </div>
+
+
+
+
+        <div class="container safetyMeasuresDiv">
+          <p class="safetyMeasuresPara" style="color: black;">
+            While we have always followed hygiene regime at LaPasta, we have taken
+            <br />
+            a few specific measures at these times.
+          </p>
+          <div class="row safetyMeasures">
+            <div class="col-sm-3 col-6">
+              <img src="./svg/mask.svg" alt="Our Kitchen executives have been instructed to wear masks at all times." />
+              <p style="color: black;">
+                Our Kitchen executives have been instructed to wear masks at all
+                times.
+              </p>
+            </div>
+
+            <div class="col-sm-3 col-6">
+              <img src="./svg/thermo.svg" alt="A daily log of our executives’ body temperatures is being maintained." />
+              <p style="color: black;">
+                A daily log of our executives’ body temperatures is being <br />
+                maintained.
+              </p>
+            </div>
+
+            <div class="col-sm-3 col-6">
+              <img src="./svg/sanitizer.svg" alt="Every kitchen executive sanitizes his/her hands every hour." />
+              <p style="color: black;">
+                Every kitchen executive sanitizes his/her hands every hour.
+                <br /><br />
+              </p>
+            </div>
+
+            <div class="col-sm-3 col-6">
+              <img src="./svg/clean.svg"
+                alt="Every kitchen surface is rigorously cleaned to ensure a clean and sanitized workstation." />
+              <p style="color: black;">
+                Every kitchen surface is rigorously cleaned to ensure a clean and
+                sanitized workstation.
+              </p>
+            </div>
+          </div>
+        </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section id="healthySection" class="testimonials">
+    <h1 class="hygiene-title">
+      <span><b style="color: rgb(169, 33, 33);">Recommendations</b></span>
+    </h1>
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-10 col-xl-8 text-center">
+
+      </div>
     </div>
 
-    <br />
-
-    <section id="categorySection">
-      <div class="container">
-        <h1>
-          <span><b style="color: rgb(169, 33, 33);">Menu</b></span>
-        </h1>
-        <div class="row gutters-40">
-          <div class="col-lg-4 col-sm-4 col-4">
-            <div class="product-box-layout4 momos">
-              <div class="item-figure">
-                <img
-                  src="./images/Spaghetti.jpg"
-                  alt="Pasta"
-                  width="100%"
-                  height="100%"
-
-                 
-                  
-                />
-              </div>
-              <div class="item-content">
-                <h2 class="card-title">La-Pasta</h2>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-sm-4 col-4">
-            <div class="product-box-layout4 chinese">
-              <div class="item-figure">
-                <img
-                  src="./images/pizza2.jpg"
-                  alt="Category"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-              <div class="item-content">
-                <h2 class="card-title">La-Pizza</h2>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-sm-4 col-4">
-            <div class="product-box-layout4 beverages">
-              <div class="item-figure">
-                <img
-                  src="./images/beverages.webp"
-                  alt="Category"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-              <div class="item-content">
-                <h2 class="card-title">Drinks</h2>
-              </div>
-            </div>
-          </div>
+    <div class="row text-center">
+      <div class="col-md-4 mb-5 mb-md-0">
+        <div class="d-flex justify-content-center mb-4">
+          <img src="./images/Wolt-app-icon-2019.png" class="rounded-circle shadow-1-strong" width="150" height="150" />
         </div>
-
-        <!-- MENU STARTS HERE -->
-        <div class="menuDiv">
-          <!-- MODAL -->
-          <div
-            class="modal fade"
-            id="exampleModal"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
-                  <button
-                    type="button"
-                    class="close"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <div class="container-fluid">
-                    <div class="row paymentInfoRow">
-                      <div class="col paymentInfo">
-                        <span class="checkIcon"
-                          ><i class="fas fa-check-circle"></i
-                        ></span>
-                        Select Items From Menu
-                      </div>
-                      <div class="col paymentInfo">
-                        <span class="checkIcon"
-                          ><i class="fa-brands fa-whatsapp"></i
-                        ></span>
-                        Place order via Whatsapp
-                      </div>
-                      <div class="col paymentInfo">
-                        <span class="checkIcon"
-                          ><i class="fa-brands fa-google-pay"></i>
-                        </span>
-                        Pay using Google Pay.
-                      </div>
-                    </div>
-
-                    <hr class="cartHr" />
-
-                    <div class="cartContentDiv">
-                      <h1>Your Cart is Empty!</h1>
-                    </div>
-
-                    <div class="userInfoDiv">
-                      <div class="mb-3 px-2">
-                        <label for="customerName">Customer Name *</label> <br />
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="customerName"
-                          placeholder="Enter your name"
-                        />
-                      </div>
-                      <div class="mb-3 px-2">
-                        <label for="address">Address *</label> <br />
-                        <textarea type="text" class="form-control" id="address" placeholder="Enter your Address"></textarea>
-                      </div>
-                      <div class="mb-3 px-2">
-                        <label for="note">Note (optional)</label> <br />
-                        <textarea type="text" class="form-control" id="note" ></textarea>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <div class="totalAmountDiv"></div>
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    onclick="location.reload()"
-                  >
-                    Clear Cart
-                  </button>
-                  <a class="btn btn-primary" onclick="openWhatsapp()">
-                    Order Now
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="momos">
-            <div class="row menuHeading">
-              <div class="col-12">
-                <h1></h1>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-6 col-12">
-                <div class="card">
-                  <h2 class="card-title">Pasta</h2>
-                  <div class="card-body">
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Rose Pasta
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>51
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus" ></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Tometo Pasta
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>49
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Mushroom Pasta
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>48
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Pink Pasta
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>50
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Aligo Olio
-                          <span>
-                            <img
-                            class="vegIcon"
-                            src="./images/veg.webp"
-                            alt="veg-icon"
-                          />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>39
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Carbonara
-                          <span>
-                            <img
-                              class="nonVegIcon"
-                              src="./images/non-veg.webp"
-                              alt="non-veg icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>49
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Spicy Tomato Pasta
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>51
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Salmon Pasta
-                          <span>
-                            <img
-                              class="nonVegIcon"
-                              src="./images/non-veg.webp"
-                              alt="non-veg icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>55
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 col-12">
-                <div class="card">
-                  <h2 class="card-title">First Course</h2>
-                  <div class="card-body">
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Green Salad
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>25
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Arabric Salad
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>26
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" sstyle="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Fries
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>19
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          SweetPoteto Fries
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>20
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Arancini
-                          <span>
-                            <img
-                              class="nonVegIcon"
-                              src="./images/non-veg.webp"
-                              alt="non-veg icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>28
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Salmon Arancini Bites
-                          <span>
-                            <img
-                              class="nonVegIcon"
-                              src="./images/non-veg.webp"
-                              alt="non-veg icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>35
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Smoked Salmon Bruschetta
-                          <span>
-                            <img
-                              class="nonVegIcon"
-                              src="./images/non-veg.webp"
-                              alt="non-veg icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>35
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr"/>
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                           Corn Polenta
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>28
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row checkOutRow">
-              <button
-                type="button"
-                class="btn knowMoreBtn"
-                data-toggle="modal"
-                data-target="#exampleModal"
-              >
-                <i class="fas fa-shopping-cart"></i> Go to Cart
-              </button>
-            </div>
-          </div>
-
-          <div id="chinese">
-            <div class="row menuHeading">
-              <div class="col-12">
-                <h1></h1>
-              </div>
-              <!-- Button trigger modal -->
-              <span
-                class="shoppingCart"
-                data-toggle="modal"
-                data-target="#exampleModal"
-              >
-                <i class="fas fa-shopping-cart"></i>
-                <span class="shoppingCartAfter">0</span>
-              </span>
-            </div>
-            <div class="row">
-              <div class="col-lg-4 col-sm-6 col-12">
-                <div class="card">
-                  <h2 class="card-title">Pizzas</h2>
-                  <div class="card-body">
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Margherita Pizza
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>50
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Veggie Supreme Pizza
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>52
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          White Pizza<span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>54
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Hawaiian Pizza
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>49
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Mushroom Pizza
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>48
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                           Garlic Pizza
-                           <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>41
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Black Ollive Pizza
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>42
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Tuna Pizza
-                          <span>
-                            <img
-                              class="nonVegIcon"
-                              src="./images/non-veg.webp"
-                              alt="non-veg icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>46
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-sm-6 col-12">
-                <div class="card">
-                  <h2 class="card-title">Appetizers</h2>
-                  <div class="card-body">
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Chilli Potato<span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>25
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Bruschetta
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>36
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Caprese Salad
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>35
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Stuffed Mushrooms
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>            
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>27
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Fried Ravioli<span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>34
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Polenta Crostini<span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>35
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Caesar Salad<span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>37
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Fried Mozzarella Sticks<span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>35
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-
-                    <div class="row foodItem"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="card">
-                  <h2 class="card-title">Desserts</h2>
-                  <div class="card-body">
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Tiramisu<span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>25
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Gelato
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>18
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Affogato
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>17
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Biscotti
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>23
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Cannoli<span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>35
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Chocolate Cake
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>31
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Creme Brulee
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>29
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Lemon Pie
-                          <span>
-                            <img
-                              class="vegIcon"
-                              src="./images/veg.webp"
-                              alt="veg-icon"
-                            />
-                          </span>
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>31
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row checkOutRow">
-              <button
-                type="button"
-                class="btn knowMoreBtn"
-                data-toggle="modal"
-                data-target="#exampleModal"
-              >
-                <i class="fas fa-shopping-cart"></i> Go to Cart
-              </button>
-            </div>
-          </div>
-
-          <div id="beverages">
-            <div class="row menuHeading">
-              <div class="col-12">
-                <h1></h1>
-              </div>
-              <!-- Button trigger modal -->
-              <span
-                class="shoppingCart"
-                data-toggle="modal"
-                data-target="#exampleModal"
-              >
-                <i class="fas fa-shopping-cart"></i>
-                <span class="shoppingCartAfter">0</span>
-              </span>
-            </div>
-            <div class="row">
-              <div class="col-sm-6 col-12">
-                <div class="card">
-                  <h2 class="card-title">Drinks</h2>
-                  <div class="card-body">
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Zero Coke
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>12
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Coke
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>12
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Fanta
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>12
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Sprite   
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>11
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Sparkling Water                        
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>9
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>
-                          Mineral Water
-                        </p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>9
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 col-12">
-                <div class="card">
-                  <h2 class="card-title">Cocktails</h2>
-                  <div class="card-body">
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>Midnight Beauty</p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>41
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>Mojito</p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>43
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>Pink Lemonade</p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>40
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>Silver Lining</p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>39
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>Sweet Memories</p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>49
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                    <hr class="foodItemHr" />
-                    <div class="row foodItem">
-                      <div class="col-9 foodItemName">
-                        <p>Virgin Mojito</p>
-                        <p class="text-muted-small">
-                          <i class="fa fa-ils"></i>39
-                        </p>
-                      </div>
-                      <div class="col-3 addCol">
-                        <span class="menuBtn minus"
-                          ><i class="fas fa-minus"></i
-                        ></span>
-                        <span class="quantity" style="background-color: rgb(255, 255, 255);">0</span>
-                        <span class="menuBtn plus"
-                          ><i class="fas fa-plus"></i
-                        ></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row checkOutRow">
-              <button
-                type="button"
-                class="btn knowMoreBtn"
-                data-toggle="modal"
-                data-target="#exampleModal"
-              >
-                <i class="fas fa-shopping-cart"></i> Go to Cart
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="healthySection">
-      <h1 class="hygiene-title">
-        <span><b style="color: rgb(169, 33, 33);">HYGIENE</b></span>
-      </h1>
-      <div class="eatSure container">
-        <div class="row">
-          
-          <div class="col-sm-2 col-6 borderLeft">
-            <div class="icon-wrapper">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                id="Capa_1"
-                enable-background="new 0 0 515.556 515.556"
-                height="512px"
-                viewBox="0 0 515.556 515.556"
-                width="512px"
-              >
-                <g>
-                  <path
-                    d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
-                    data-original="#000000"
-                    class="active-path"
-                    data-old_color="#000000"
-                    fill="#FFFFFF"
-                  ></path>
-                </g>
-              </svg>
-              
-            </div>
-            <div class="text">Zero Trans Fats</div>
-          </div>
-          
-          
-
-          <div class="col-sm-2 col-6 borderLeft">
-            <div class="icon-wrapper">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                id="Capa_1"
-                enable-background="new 0 0 515.556 515.556"
-                height="512px"
-                viewBox="0 0 515.556 515.556"
-                width="512px"
-              >
-                <g>
-                  <path
-                    d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
-                    data-original="#000000"
-                    class="active-path"
-                    data-old_color="#000000"
-                    fill="#FFFFFF"
-                  ></path>
-                </g>
-              </svg>
-              
-            </div>
-            <div class="text">Medically Certified Kitchen Staff</div>
-          </div>
-
-          <div class="col-sm-2 col-6 borderLeft">
-            <div class="icon-wrapper">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                id="Capa_1"
-                enable-background="new 0 0 515.556 515.556"
-                height="512px"
-                viewBox="0 0 515.556 515.556"
-                width="512px"
-              >
-                <g>
-                  <path
-                    d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
-                    data-original="#000000"
-                    class="active-path"
-                    data-old_color="#000000"
-                    fill="#FFFFFF"
-                  ></path>
-                </g>
-              </svg>
-            </div>
-            <div class="text">200+ Stringent Quality Checks</div>
-          </div>
-
-          <div class="col-sm-2 col-6 borderLeft">
-            <div class="icon-wrapper">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                id="Capa_1"
-                enable-background="new 0 0 515.556 515.556"
-                height="512px"
-                viewBox="0 0 515.556 515.556"
-                width="512px"
-              >
-                <g>
-                  <path
-                    d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
-                    data-original="#000000"
-                    class="active-path"
-                    data-old_color="#000000"
-                    fill="#FFFFFF"
-                  ></path>
-                </g>
-              </svg>
-            </div>
-            <div class="text">No Artificial Colours or Flavours</div>
-          </div>
-
-          <div class="col-sm-2 col-6 borderLeft">
-            <div class="icon-wrapper">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                id="Capa_1"
-                enable-background="new 0 0 515.556 515.556"
-                height="512px"
-                viewBox="0 0 515.556 515.556"
-                width="512px"
-              >
-                <g>
-                  <path
-                    d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
-                    data-original="#000000"
-                    class="active-path"
-                    data-old_color="#000000"
-                    fill="#FFFFFF"
-                  ></path>
-                </g>
-              </svg>
-            </div>
-            <div class="text">Double Sealed Packaging <br /><br /></div>
-          </div>
-          <div class="col-sm-2 col-6 borderLeft">
-            <div class="icon-wrapper">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                id="Capa_1"
-                enable-background="new 0 0 515.556 515.556"
-                height="512px"
-                viewBox="0 0 515.556 515.556"
-                width="512px"
-              >
-                <g>
-                  <path
-                    d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
-                    data-original="#000000"
-                    class="active-path"
-                    data-old_color="#000000"
-                    fill="#FFFFFF"
-                  ></path>
-                </g>
-              </svg>
-            </div>
-            <div class="text">Premium Ingredients <br /><br /></div>
-          </div>
-          
-
-         
-
-      <div class="container safetyMeasuresDiv">
-        <p class="safetyMeasuresPara" style="color: black;">
-          While we have always followed hygiene regime at LaPasta, we have taken
-          <br />
-          a few specific measures at these times.
+        <h5 class="mb-3">Wolt</h5>
+        <p class="px-xl-3">
+          <i class="fas fa-quote-left pe-2"></i>
+          Good Service, fast Delivery and amazing taste
+          <i class="fas fa-quote-left pe-2"></i>
         </p>
-        <div class="row safetyMeasures">
-          <div class="col-sm-3 col-6">
-            <img
-              src="./svg/mask.svg"
-              alt="Our Kitchen executives have been instructed to wear masks at all times."
-            />
-            <p style="color: black;">
-              Our Kitchen executives have been instructed to wear masks at all
-              times.
-            </p>
-          </div>
+        <ul class="list-unstyled d-flex justify-content-center mb-0">
+          <li>
+            <i class="fas fa-star fa-sm text-warning"></i>
+          </li>
+          <li>
+            <i class="fas fa-star fa-sm text-warning"></i>
+          </li>
+          <li>
+            <i class="fas fa-star fa-sm text-warning"></i>
+          </li>
+          <li>
+            <i class="fas fa-star fa-sm text-warning"></i>
+          </li>
+          <li>
+            <i class="fas fa-star fa-sm text-warning"></i>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-5 mb-md-0">
+        <div class="d-flex justify-content-center mb-4">
+          <img src="./images/walla.jpg" class="rounded-circle shadow-1-strong" width="165" height="150" />
+        </div>
+        <h5 class="mb-3">Walla Food</h5>
+        <p class="px-xl-3">
+          <i class="fas fa-quote-left pe-2"></i>Faster Delivery & Fresh food<i class="fas fa-quote-left pe-2"></i>
+        </p>
+        <ul class="list-unstyled d-flex justify-content-center mb-0">
+          <li>
+            <i class="fas fa-star fa-sm text-warning"></i>
+          </li>
+          <li>
+            <i class="fas fa-star fa-sm text-warning"></i>
+          </li>
+          <li>
+            <i class="fas fa-star fa-sm text-warning"></i>
+          </li>
+          <li>
+            <i class="fas fa-star fa-sm text-warning"></i>
+          </li>
+          <li>
+            <i class="fas fa-star-half-alt fa-sm text-warning"></i>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-0">
+        <div class="d-flex justify-content-center mb-4">
+          <img src="./images/10bis.jpg" class="rounded-circle shadow-1-strong" width="150" height="150" />
+        </div>
+        <h5 class="mb-3">10Bis</h5>
+        <p class="px-xl-3">
+          <i class="fas fa-quote-left pe-2"></i>The Best Pasta In Town ! <i class=" fas fa-quote-left pe-2"></i>
+        </p>
+        <ul class="list-unstyled d-flex justify-content-center mb-0">
+          <li>
+            <i class="fas fa-star fa-sm text-warning"></i>
+          </li>
+          <li>
+            <i class="fas fa-star fa-sm text-warning"></i>
+          </li>
+          <li>
+            <i class="fas fa-star fa-sm text-warning"></i>
+          </li>
+          <li>
+            <i class="fas fa-star fa-sm text-warning"></i>
+          </li>
+          <li>
+            <i class="far fa-star fa-sm text-warning"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-          <div class="col-sm-3 col-6">
-            <img
-              src="./svg/thermo.svg"
-              alt="A daily log of our executives’ body temperatures is being maintained."
-            />
-            <p style="color: black;">
-              A daily log of our executives’ body temperatures is being <br />
-              maintained.
-            </p>
-          </div>
+  <!-- FOOTER STARTS HERE -->
 
-          <div class="col-sm-3 col-6">
-            <img
-              src="./svg/sanitizer.svg"
-              alt="Every kitchen executive sanitizes his/her hands every hour."
-            />
-            <p style="color: black;">
-              Every kitchen executive sanitizes his/her hands every hour.
-              <br /><br />
-            </p>
-          </div>
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-9 footerHeadingCol">
+          <h2>La-Pasta</h2>
+        </div>
 
-          <div class="col-sm-3 col-6">
-            <img
-              src="./svg/clean.svg"
-              alt="Every kitchen surface is rigorously cleaned to ensure a clean and sanitized workstation."
-            />
-            <p style="color: black;" >
-              Every kitchen surface is rigorously cleaned to ensure a clean and
-              sanitized workstation.
-            </p>
-          </div>
+        <div class="col-3 socialMedia">
+          <a href="https://www.facebook.com/LaPastaEgy/" target="_blank" class="socialMediaIcon">
+            <span><i class="fab fa-facebook-f"></i></span></a>
+          <a href="https://twitter.com/lapastavic" target="_blank" class="socialMediaIcon">
+            <span><i class="fab fa-twitter"></i></span></a>
+          <a href="https://www.instagram.com/ristorantelapasta/?hl=en" target="_blank" class="socialMediaIcon">
+            <span><i class="fab fa-instagram"></i></span></a>
+          <a href="https://www.linkedin.com/company/la-pasta-inc-/" target="_blank" class="socialMediaIcon">
+            <span><i class="fab fa-linkedin"></i></span></a>
         </div>
       </div>
-    </section>
 
-    <!-- TESTIMONIALS SECTION -->
-    <section id="healthySection" class="testimonials">
-      <h1 class="hygiene-title">
-        <span><b style="color: rgb(169, 33, 33);">Recommendations</b></span>
-      </h1>
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-10 col-xl-8 text-center">
-         
-        </div>
+      <div class="row contactRow">
+        <p>
+          <a class="footer_clickable" href="./policy.html">Policies</a> |
+          <a class="footer_clickable" href="./terms_of_service.html">Terms of Service</a>
+          |
+          <!-- <a class="footer_clickable" href="tel:+919871198882">Contact Us</a> -->
+          <a class="footer_clickable" href="./contactus.html">Contact Us</a>
+        </p>
       </div>
 
-      <div class="row text-center">
-        <div class="col-md-4 mb-5 mb-md-0">
-          <div class="d-flex justify-content-center mb-4">
-            <img
-              src="./images/Wolt-app-icon-2019.png"
-              class="rounded-circle shadow-1-strong"
-              width="150"
-              height="150"
-              
-            />
-          </div>
-          <h5 class="mb-3">Wolt</h5>
-          <p class="px-xl-3">
-            <i class="fas fa-quote-left pe-2"></i>
-            Good Service, fast Delivery and amazing taste
-            <i class="fas fa-quote-left pe-2"></i>
-          </p>
-          <ul class="list-unstyled d-flex justify-content-center mb-0">
-            <li>
-              <i class="fas fa-star fa-sm text-warning"></i>
-            </li>
-            <li>
-              <i class="fas fa-star fa-sm text-warning"></i>
-            </li>
-            <li>
-              <i class="fas fa-star fa-sm text-warning"></i>
-            </li>
-            <li>
-              <i class="fas fa-star fa-sm text-warning"></i>
-            </li>
-            <li>
-              <i class="fas fa-star fa-sm text-warning"></i>
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-4 mb-5 mb-md-0">
-          <div class="d-flex justify-content-center mb-4">
-            <img
-              src="./images/walla.jpg"
-              class="rounded-circle shadow-1-strong"
-              width="165"
-              height="150"
-              
-            />
-          </div>
-          <h5 class="mb-3">Walla Food</h5>
-          <p class="px-xl-3">
-            <i class="fas fa-quote-left pe-2"></i>Faster Delivery & Fresh food<i class="fas fa-quote-left pe-2"></i>
-          </p>
-          <ul class="list-unstyled d-flex justify-content-center mb-0">
-            <li>
-              <i class="fas fa-star fa-sm text-warning"></i>
-            </li>
-            <li>
-              <i class="fas fa-star fa-sm text-warning"></i>
-            </li>
-            <li>
-              <i class="fas fa-star fa-sm text-warning"></i>
-            </li>
-            <li>
-              <i class="fas fa-star fa-sm text-warning"></i>
-            </li>
-            <li>
-              <i class="fas fa-star-half-alt fa-sm text-warning"></i>
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-4 mb-0">
-          <div class="d-flex justify-content-center mb-4">
-            <img
-              src="./images/10bis.jpg"
-              class="rounded-circle shadow-1-strong"
-              width="150"
-              height="150"
-              
-            />
-          </div>
-          <h5 class="mb-3">10Bis</h5>
-          <p class="px-xl-3">
-            <i class="fas fa-quote-left pe-2"></i>The Best Pasta In Town ! <i class=" fas fa-quote-left pe-2"></i>
-          </p>
-          <ul class="list-unstyled d-flex justify-content-center mb-0">
-            <li>
-              <i class="fas fa-star fa-sm text-warning"></i>
-            </li>
-            <li>
-              <i class="fas fa-star fa-sm text-warning"></i>
-            </li>
-            <li>
-              <i class="fas fa-star fa-sm text-warning"></i>
-            </li>
-            <li>
-              <i class="fas fa-star fa-sm text-warning"></i>
-            </li>
-            <li>
-              <i class="far fa-star fa-sm text-warning"></i>
-            </li>
-          </ul>
-        </div>
+      <div class="row copyrightRow">
+        <p class="copyright">&copy; Copyright LaPasta All rights reserved To Omer Ben Simon & Cfir Croitoru & Yuval Levi
+        </p>
       </div>
-    </section>
+    </div>
+  </footer>
 
-    <!-- FOOTER STARTS HERE -->
+  <!-- BOOTSTRAP JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <!-- FONT AWESOME JS -->
+  <script src="https://kit.fontawesome.com/9f6e489cf7.js" crossorigin="anonymous"></script>
+  <!-- JQUERY CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <footer id="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-9 footerHeadingCol">
-            <h2>La-Pasta</h2>
-          </div>
+  <!-- CUSTOM JS -->
+  <script src="./index.js"></script>
+</body>
 
-          <div class="col-3 socialMedia">
-            <a href="https://www.facebook.com/LaPastaEgy/" target="_blank" class="socialMediaIcon">
-              <span><i class="fab fa-facebook-f"></i></span
-            ></a>
-            <a href="https://twitter.com/lapastavic" target="_blank" class="socialMediaIcon">
-              <span><i class="fab fa-twitter"></i></span
-            ></a>
-            <a href="https://www.instagram.com/ristorantelapasta/?hl=en"target="_blank" class="socialMediaIcon">
-              <span><i class="fab fa-instagram"></i></span
-            ></a>
-            <a
-              href="https://www.linkedin.com/company/la-pasta-inc-/"
-              target="_blank"
-              class="socialMediaIcon"
-            >
-              <span><i class="fab fa-linkedin"></i></span
-            ></a>
-          </div>
-        </div>
+<!-- CUSTOM JS -->
+<script>
+  $(window).on("load", function () {
+    $("#loading").hide();
+  });
+</script>
 
-        <div class="row contactRow">
-          <p>
-            <a class="footer_clickable" href="./policy.html">Policies</a> |
-            <a class="footer_clickable" href="./terms_of_service.html"
-              >Terms of Service</a
-            >
-            |
-            <!-- <a class="footer_clickable" href="tel:+919871198882">Contact Us</a> -->
-            <a class="footer_clickable" href="./contactus.html">Contact Us</a>
-          </p>
-        </div>
-
-        <div class="row copyrightRow">
-          <p class="copyright">&copy; Copyright LaPasta All rights reserved To Omer Ben Simon & Cfir Croitoru & Yuval Levi</p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- BOOTSTRAP JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-    <!-- FONT AWESOME JS -->
-    <script
-      src="https://kit.fontawesome.com/9f6e489cf7.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- JQUERY CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <!-- CUSTOM JS -->
-    <script src="./index.js"></script>
-  </body>
-
-   <!-- CUSTOM JS -->
-   <script>
-     $(window).on("load", function () {
-       $("#loading").hide();
-     });
-   </script>
- </html>
+</html>

@@ -26,23 +26,34 @@ footer {
   align-items: center;
   justify-content: flex-start;
 }
+
 /* policies, terms of service and contact */
 .footer_clickable:hover {
   color: #ffc107;
   text-decoration: none;
 }
-.socialMedia /* social media section */ {
+
+.socialMedia
+
+/* social media section */
+  {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-.socialMediaIcon /* individual icons styling */ {
+.socialMediaIcon
+
+/* individual icons styling */
+  {
   margin-right: 15px;
   font-size: 2.2rem;
 }
 
-.socialMediaIcon:hover /* hover styles */ {
+.socialMediaIcon:hover
+
+/* hover styles */
+  {
   color: #ffc107 !important;
   font-size: 2.3rem;
 }
@@ -89,7 +100,11 @@ footer a {
   font-weight: 500;
   font-size: 3.5rem;
 }
-.nav-item /* for each navbar item */ {
+
+.nav-item
+
+/* for each navbar item */
+  {
   font-size: 1.1rem;
   font-weight: 500;
   font-family: "Ubuntu", sans-serif;
@@ -106,16 +121,19 @@ header {
   color: burlywood;
   border-bottom: 1px solid rgb(255, 223, 169);
 }
+
 .content {
   display: flex;
   flex-direction: row;
   word-wrap: normal;
 }
+
 li {
   /* padding: 10px; */
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 15px;
 }
+
 .text-white li {
   padding: 10px;
 }
@@ -129,7 +147,7 @@ li {
   }
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1000px) {
   .navbar-expand-lg {
     height: auto;
   }

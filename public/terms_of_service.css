@@ -18,7 +18,11 @@ body {
   font-weight: 500;
   font-size: 3.5rem;
 }
-.nav-item /* for each navbar item */ {
+
+.nav-item
+
+/* for each navbar item */
+  {
   font-size: 1.1rem;
   font-weight: 500;
   font-family: "Ubuntu", sans-serif;
@@ -35,26 +39,29 @@ header {
   color: burlywood;
   border-bottom: 1px solid rgb(255, 223, 169);
 }
+
 .content {
   display: flex;
   flex-direction: row;
   word-wrap: normal;
 }
+
 li {
   /* padding: 10px; */
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 15px;
 }
-.text-white li{
+
+.text-white li {
   padding: 10px;
 }
 
-@media screen and (max-width: 992px){
-  .navbar-nav{
-  background-color: #FFC107;
-  text-align: right;
-  width: 150px;
-  border-radius: 10%;
-  
-}
+@media screen and (max-width: 992px) {
+  .navbar-nav {
+    background-color: #FFC107;
+    text-align: right;
+    width: 150px;
+    border-radius: 10%;
+
+  }
 }

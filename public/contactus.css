@@ -4,6 +4,7 @@
   width: 3rem;
   height: auto;
 }
+
 .icon1 img {
   width: 3rem;
   height: auto;
@@ -43,12 +44,14 @@
   font-weight: 400;
   color: beige;
 }
+
 .contact .content p {
   padding-top: 4px;
   font-size: 26px;
   font-weight: 275;
   color: beige;
 }
+
 .container {
   width: 100%;
   display: flex;
@@ -100,16 +103,19 @@
   padding: 40px;
   background: #fff;
 }
+
 .contactForm h2 {
   font-size: 30px;
   color: #333;
   font-weight: 500;
 }
+
 .contactForm .inputBox {
   position: relative;
   width: 100%;
   margin-top: 10px;
 }
+
 .contactForm .inputBox input,
 .contactForm .inputBox textarea {
   width: 100%;
@@ -132,10 +138,11 @@
   transition: 0.5s;
   color: #666;
 }
-.contactForm .inputBox input:focus ~ span,
-.contactForm .inputBox input:valid ~ span,
-.contactForm .inputBox textarea:focus ~ span,
-.contactForm .inputBox textarea:valid ~ span {
+
+.contactForm .inputBox input:focus~span,
+.contactForm .inputBox input:valid~span,
+.contactForm .inputBox textarea:focus~span,
+.contactForm .inputBox textarea:valid~span {
   color: #592b00;
   font-size: 12px;
   transform: translateY(-20px);
@@ -150,6 +157,7 @@
   padding: 10px;
   font-size: 18px;
 }
+
 .h2 {
   color: #ffc107;
 }
@@ -180,7 +188,8 @@ footer {
 
 .socialMedia
 
-/* social media section */ {
+/* social media section */
+  {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -189,7 +198,8 @@ footer {
 
 .socialMediaIcon
 
-/* individual icons styling */ {
+/* individual icons styling */
+  {
   margin-right: 15px;
   font-size: 2.2rem;
 }
@@ -257,7 +267,8 @@ footer a {
 
 .cartQuantity
 
-/* Total number of cart items */ {
+/* Total number of cart items */
+  {
   font-size: 0.8rem;
 }
 
@@ -347,6 +358,7 @@ footer a {
   color: #0e76a8;
   font-size: 2.3rem;
 }
+
 *::-webkit-scrollbar {
   width: 15px;
 }

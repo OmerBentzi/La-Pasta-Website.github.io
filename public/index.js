@@ -87,7 +87,7 @@ $(document).ready(function () {
           scrollTop: $("#momos").offset().top,
         },
         800,
-        function () {}
+        function () { }
       );
     } else if ($(this)[0].className.search("chinese productClicked") > -1) {
       $("#chinese").show().siblings("div").hide();
@@ -97,7 +97,7 @@ $(document).ready(function () {
           scrollTop: $("#chinese").offset().top,
         },
         800,
-        function () {}
+        function () { }
       );
     } else if ($(this)[0].className.search("beverages productClicked") > -1) {
       $("#beverages").show().siblings("div").hide();
@@ -107,7 +107,7 @@ $(document).ready(function () {
           scrollTop: $("#beverages").offset().top,
         },
         800,
-        function () {}
+        function () { }
       );
     }
   });
@@ -223,8 +223,8 @@ $(document).ready(function () {
     $(".totalAmountDiv").empty();
     $(".totalAmountDiv").append(
       '<span class="totalAmountText">TOTAL AMOUNT : </span><br/>' +
-        '<i class="fa fa-ils"></i> ' +
-        totalAmount
+      '<i class="fa fa-ils"></i> ' +
+      totalAmount
     );
   }
 });
@@ -246,7 +246,7 @@ function openWhatsapp() {
     let total = 0;
     let address = $("#address")[0].value;
     let note = $("#note")[0].value;
-  
+
     // Calculate the maximum length of the food item names and set a fixed width for the "Name" column
     let maxNameLength = 0;
     for (var i = 0; i < food.length; i++) {
@@ -255,28 +255,28 @@ function openWhatsapp() {
         maxNameLength = name.length;
       }
     }
-  
+
     const nameColumnWidth = maxNameLength + 5; // Use a fixed width for the "Name" column
-  
+
     let wTxt = "Name".padEnd(nameColumnWidth) + "Quantity\n";
-  
+
     for (var i = 0; i < food.length; i++) {
       let name = food[i][0];
       let quantity = food[i][1].toString();
       total = total + food[i][1] * food[i][2];
-  
+
       // Pad the name with spaces to align it properly
       let nameWithSpaces = name.padEnd(nameColumnWidth, " ");
-  
+
       // Calculate the number of spaces needed for the "Quantity" column
       let quantitySpaces = nameColumnWidth - nameWithSpaces.length + 5; // Add 5 extra spaces for better alignment
-  
+
       // Pad the quantity with spaces to align it properly
       let quantityWithSpaces = quantity.padStart(quantitySpaces, " ");
-  
+
       wTxt = wTxt + nameWithSpaces + quantityWithSpaces + "\n"; // Add the name and quantity to the output
     }
-  
+
     wTxt =
       wTxt +
       "\n *Total Bill: " +
@@ -290,7 +290,7 @@ function openWhatsapp() {
       note +
       "\n\n Thank you for choosing LaPasta, bon appétit!\n\n" +
       "Visit our website: https://omerbentzi.github.io/La-Pasta-Website.github.io/public/index.html";
-  
+
 
     let wTxtEncoded = encodeURI(wTxt);
     window.open("https://wa.me/972584000183?text=" + wTxtEncoded);

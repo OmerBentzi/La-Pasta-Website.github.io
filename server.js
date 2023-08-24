@@ -23,11 +23,11 @@ mongoose.connect('mongodb://127.0.0.1:27017/mydb', {
 var db = mongoose.connection;
 db.on('error', () => console.log("Error in Connecting To Database"));
 db.once('open', () => console.log("Connected To MongoDB Database"));
-app.post('/sign_up', async(req, res) => {
+app.post('/sign_up', async (req, res) => {
     var name = req.body.name;
     var email = req.body.email;
     var phone = req.body.phone;
-    var password = req.body.password; 
+    var password = req.body.password;
 
     var data = {
         "name": name,
@@ -36,60 +36,60 @@ app.post('/sign_up', async(req, res) => {
         "password": password
     }
 
-    db.collection('users').findOne({email: data.email}, (err, user) => {
+    db.collection('users').findOne({ email: data.email }, (err, user) => {
         if (err) {
             throw err;
         }
-    
-        if (user){
+
+        if (user) {
             console.log("Email already exists")
             return res.send("The Email already exists");
         }
         else {
             db.collection('users').insertOne(data, (err, collection) => {
-                if(err) {
+                if (err) {
                     throw err;
                 }
                 //if the data inserted successfully
                 console.log("Data Inserted Successfully");
                 console.log(collection);
                 return res.send("Sign up Succsessfully");
-                
+
             });
         }
-       
-            });
+
+    });
 })
 
 
-app.post('/log_in', async(req, res) => {
+app.post('/log_in', async (req, res) => {
     var email = req.body.email;
-    var password = req.body.password; 
+    var password = req.body.password;
 
     var data = {
         "email": email,
         "password": password
     }
-db.collection('users').findOne({ email: data.email ,password: data.password}, (err, user) => {
-    if (err) {
-        throw err;
-    }
+    db.collection('users').findOne({ email: data.email, password: data.password }, (err, user) => {
+        if (err) {
+            throw err;
+        }
 
-    if (user) {
-        // If user with the provided email exists
-                // Passwords match, log in successfully
-                console.log("Log In Successfully");
-                return res.send("Log In Successfully");
-   }
-   
-   else {
-                // Incorrect password
-                console.log("Incorrect password");   
-                // You can handle the incorrect password case here, like showing an error message
-                return res.send("Incorrect Email or Password"); // Redirect to login page with error message
-            }
-        });
+        if (user) {
+            // If user with the provided email exists
+            // Passwords match, log in successfully
+            console.log("Log In Successfully");
+            return res.send("Log In Successfully");
+        }
+
+        else {
+            // Incorrect password
+            console.log("Incorrect password");
+            // You can handle the incorrect password case here, like showing an error message
+            return res.send("Incorrect Email or Password"); // Redirect to login page with error message
+        }
     });
+});
 
 app.get('/sign_up', (req, res) => {
     res.set({

@@ -6,7 +6,10 @@ body {
   background-color: #000000;
 }
 
-@font-face /*  Specifies Custom Font to display the text */ {
+@font-face
+
+/*  Specifies Custom Font to display the text */
+  {
   font-family: myFirstFont;
   src: url(fonts/EMcomic-Bold.ttf);
 }
@@ -61,7 +64,8 @@ a:hover {
 
 .nav-item
 
-/* for each navbar item */ {
+/* for each navbar item */
+  {
   font-size: 1.1rem;
   font-weight: 500;
 }
@@ -131,6 +135,7 @@ a:hover {
 }
 
 @keyframes animate {
+
   0%,
   10%,
   100% {
@@ -252,7 +257,8 @@ a:hover {
 
 .product-box-layout4 .item-figure
 
-/* indivdual card styles */ {
+/* indivdual card styles */
+  {
   margin-bottom: 0;
   position: relative;
   z-index: 2;
@@ -644,7 +650,8 @@ footer {
 
 .socialMedia
 
-/* social media section */ {
+/* social media section */
+  {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -653,7 +660,8 @@ footer {
 
 .socialMediaIcon
 
-/* individual icons styling */ {
+/* individual icons styling */
+  {
   margin-right: 15px;
   font-size: 2.2rem;
 }
@@ -765,7 +773,8 @@ footer a {
 
 .cartQuantity
 
-/* Total number of cart items */ {
+/* Total number of cart items */
+  {
   font-size: 0.8rem;
 }
 
