@@ -9,14 +9,20 @@ function xmlHttpRequest() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
         // Handle the successful response here
-        var response = xhr.responseText;
-        if (response === "Incorrect Email or Password") {
+        var response = JSON.parse(xhr.responseText);
+        if (response.status === "Incorrect Email or Password") {
           alert("Incorrect Email or Password")
         }
-        else if (response === "Log In Successfully") {
+        else if(response.status === "All fields must be complete"){
+          alert("All fields must be complete")
+        }
+
+        else if (response.status === "Log In Successfully") {
+          localStorage.setItem("user_name", response.user_name);
+          localStorage.setItem("user_email", response.user_email);
           location.replace("index.html")
         }
-        console.log(response);
+
       } else {
         // Handle errors here
         console.error("Error:", xhr.statusText);

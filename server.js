@@ -66,6 +66,11 @@ app.post('/log_in', async (req, res) => {
     var email = req.body.email;
     var password = req.body.password;
 
+    if (!email || !password) {
+        console.log('All fields must be complete')
+        return res.json({ status: 'All fields must be complete' })
+    }
+
     var data = {
         "email": email,
         "password": password
@@ -79,14 +84,14 @@ app.post('/log_in', async (req, res) => {
             // If user with the provided email exists
             // Passwords match, log in successfully
             console.log("Log In Successfully");
-            return res.send("Log In Successfully");
+            return res.json({ status: 'Log In Successfully', user_name: user.name, user_email: user.email })
         }
 
         else {
             // Incorrect password
             console.log("Incorrect password");
             // You can handle the incorrect password case here, like showing an error message
-            return res.send("Incorrect Email or Password"); // Redirect to login page with error message
+            return res.json({ status: 'Incorrect Email or Password' })
         }
     });
 });

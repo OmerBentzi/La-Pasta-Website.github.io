@@ -137,6 +137,7 @@ $(document).ready(function () {
     let count = Number(quantity.text());
     if ($(this)[0].className.search("plus") > -1) {
       count = count + 1;
+      localStorage.setItem("items_" + foodNameClicked , count);
       quantity.text(count);
       ToCart(foodNameClicked, count, isVeg, singleFoodAmount);
     } else if ($(this)[0].className.search("minus") > -1) {
@@ -144,6 +145,7 @@ $(document).ready(function () {
         quantity.text(0);
       } else {
         count = count - 1;
+        localStorage.setItem("items_" + foodNameClicked , count);
         quantity.text(count);
         ToCart(foodNameClicked, count, isVeg, singleFoodAmount);
       }
@@ -295,4 +297,15 @@ function openWhatsapp() {
     let wTxtEncoded = encodeURI(wTxt);
     window.open("https://wa.me/972584000183?text=" + wTxtEncoded);
   }
+  
+}
+
+var user_name = localStorage.getItem('user_name')
+if(user_name === null){
+  document.getElementById("user_name").hidden = true;
+  document.getElementById("login").hidden = false;
+} else {
+  document.getElementById("login").hidden = true;
+  document.getElementById("user_name").hidden = false;
+  document.getElementById("user_name").innerHTML ="Hi , " +user_name ;
 }
