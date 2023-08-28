@@ -3,7 +3,8 @@ function xmlHttpRequest() {
   var email = document.getElementById("email").value;
   var phone = document.getElementById("phone").value;
   var password = document.getElementById("password").value;
-  if (name === "" || email === "" || phone === "" || password === "") {
+
+  if ( !name || !email || !phone || !password) {
     alert("All fields must be complete")
     return
   }
@@ -15,15 +16,20 @@ function xmlHttpRequest() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
         // Handle the successful response here
-        var response = xhr.responseText;
-        console.log(response);
-        if (response === "The Email already exists") {
+        var response = JSON.parse(xhr.responseText)
+        if (response.status === "The Email already exists") {
           alert("The Email already exists")
         }
-        else if (response === "Sign up Succsessfully") {
-          location.replace("form_sucsess.html")
+        else if(response.status === "All fields must be complete"){
+          alert("All fields must be complete")
         }
-        console.log(response);
+        else if(response.status === "Invalid email"){
+          alert("Invalid email")
+        }
+        else if (response.status === "Sign up Succsessfully") {
+          localStorage.setItem("sign_up_user_name" , response.user_name);
+          location.replace("form_sucsess.html");
+        }
       } else {
         // Handle errors here
         console.error("Error:", xhr.statusText);

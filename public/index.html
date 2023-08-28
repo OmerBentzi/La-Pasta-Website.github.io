@@ -74,6 +74,7 @@
         </ul>
       </div>
       <a class="nav-link px-4" id="user_name"></a>
+      <a class="nav-link px-4" id="logout">Logout</a>
       <span class="shoppingCart" data-toggle="modal" data-target="#exampleModal">
         <i class="fas fa-shopping-cart"></i>
         <span class="shoppingCartAfter">0</span>
@@ -203,7 +204,7 @@
               </div>
               <div class="modal-footer">
                 <div class="totalAmountDiv"></div>
-                <button type="button" class="btn btn-secondary" onclick="location.reload()">
+                <button type="button" class="btn btn-secondary" onclick="localStorage.setItem('items', JSON.stringify({})); location.reload();">
                   Clear Cart
                 </button>
                 <a class="btn btn-primary" onclick="openWhatsapp()">
@@ -1578,6 +1579,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- CUSTOM JS -->
+  <script src="./nav.js"></script>
   <script src="./index.js"></script>
 </body>
 

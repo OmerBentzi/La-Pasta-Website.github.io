@@ -2,6 +2,11 @@ function xmlHttpRequest() {
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
 
+  if (!email || !password) {
+    alert("All fields must be complete")
+    return
+  }
+
   var xhr = new XMLHttpRequest();
   xhr.open("POST", "/log_in", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
