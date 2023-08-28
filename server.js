@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }))
 
-mongoose.connect('mongodb+srv://yuval9757:198237@cluster0.3xg3lef.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect('mongodb://127.0.0.1:27017/mydb', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
