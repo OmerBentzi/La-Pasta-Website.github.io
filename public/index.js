@@ -155,12 +155,6 @@ $(document).ready(function () {
 function ToCart(foodNameClicked, foodQuantity, isVeg, foodPrice, amountToAdd) {
   let foodAlreadyThere = false;
   let foodPos;
-  let node;
-  if (isVeg) {
-    node = '<img class="vegIcon" src="./images/veg.webp" alt="" />';
-  } else {
-    node = '<img class="nonVegIcon" src="./images/non-veg.webp" alt="" />';
-  }
   for (var i = 0; i < food.length; i++) {
     if (food[i][0] === foodNameClicked) {
       foodAlreadyThere = true;
@@ -177,9 +171,9 @@ function ToCart(foodNameClicked, foodQuantity, isVeg, foodPrice, amountToAdd) {
 
   if (foodAlreadyThere) {
     food.splice(foodPos, 1);
-    food.push([foodNameClicked, foodQuantity, foodPrice, node]);
+    food.push([foodNameClicked, foodQuantity, foodPrice]);
   } else {
-    food.push([foodNameClicked, foodQuantity, foodPrice, node]);
+    food.push([foodNameClicked, foodQuantity, foodPrice]);
   }
 
   // Remove Food items with quantity = 0
@@ -198,7 +192,6 @@ function ToCart(foodNameClicked, foodQuantity, isVeg, foodPrice, amountToAdd) {
         '<div class="row cartContentRow"><div class="col-10"><div style="display:flex;"><p>' +
         food[i][0] +
         '</p> <p class="text-muted-small">' +
-        food[i][3] +
         '<p></div><i class="fa fa-ils"> ' +
         food[i][2] +
         '</i></p>  </div>  <div class="col-2"> <p class="text-muted-small" > <i class="fa fa-ils"></i> ' +
