@@ -89,3 +89,10 @@ a:hover {
   text-align: center;
 
 }
+
+.error_icon{
+  color: #ff0033;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
