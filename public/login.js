@@ -16,21 +16,15 @@ function xmlHttpRequest() {
       if (xhr.status === 200) {
         // Handle the successful response here
         var response = JSON.parse(xhr.responseText);
-        if (response.status === "Incorrect Email or Password") {
-          document.getElementById("login_error").hidden = false;
-          document.getElementById("error_text").innerHTML = "Incorrect Email or Password";
-        }
-        else if (response.status === "All fields must be complete") {
-          document.getElementById("login_error").hidden = false;
-          document.getElementById("error_text").innerHTML = "All fields must be complete";
-        }
-
-        else if (response.status === "Log In Successfully") {
+        if (response.status === "Log In Successfully") {
           localStorage.setItem("user_name", response.user_name);
           localStorage.setItem("user_email", response.user_email);
           location.replace("index.html")
         }
-
+        else {
+          document.getElementById("login_error").hidden = false;
+          document.getElementById("error_text").innerHTML = response.status;
+        }
       } else {
         // Handle errors here
         console.error("Error:", xhr.statusText);
