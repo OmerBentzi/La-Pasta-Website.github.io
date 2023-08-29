@@ -3,7 +3,8 @@ function xmlHttpRequest() {
   var password = document.getElementById("password").value;
 
   if (!email || !password) {
-    alert("All fields must be complete")
+    document.getElementById("login_error").hidden = false;
+    document.getElementById("error_text").innerHTML = "All fields must be complete";
     return
   }
 
@@ -16,10 +17,12 @@ function xmlHttpRequest() {
         // Handle the successful response here
         var response = JSON.parse(xhr.responseText);
         if (response.status === "Incorrect Email or Password") {
-          alert("Incorrect Email or Password")
+          document.getElementById("login_error").hidden = false;
+          document.getElementById("error_text").innerHTML = "Incorrect Email or Password";
         }
         else if(response.status === "All fields must be complete"){
-          alert("All fields must be complete")
+          document.getElementById("login_error").hidden = false;
+          document.getElementById("error_text").innerHTML = "All fields must be complete";
         }
 
         else if (response.status === "Log In Successfully") {
