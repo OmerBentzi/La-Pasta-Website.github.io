@@ -83,7 +83,6 @@ a:hover {
   border: 1px solid #ff0033;
   border-radius: 12px;
   background-color: #ffffff;
-  height: 35%;
   width: 100%;
   margin-bottom: 10px;
   padding: 10px;
@@ -93,7 +92,6 @@ a:hover {
 }
 
 .error_icon{
-  color: #ff0033;
   width: 15px;
   height: 15px;
   margin-right: 10px;

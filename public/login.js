@@ -20,7 +20,7 @@ function xmlHttpRequest() {
           document.getElementById("login_error").hidden = false;
           document.getElementById("error_text").innerHTML = "Incorrect Email or Password";
         }
-        else if(response.status === "All fields must be complete"){
+        else if (response.status === "All fields must be complete") {
           document.getElementById("login_error").hidden = false;
           document.getElementById("error_text").innerHTML = "All fields must be complete";
         }
