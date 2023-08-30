@@ -5,7 +5,8 @@ function xmlHttpRequest() {
   var password = document.getElementById("password").value;
 
   if ( !name || !email || !phone || !password) {
-    alert("All fields must be complete")
+    document.getElementById("sign_up_error").hidden = false;
+    document.getElementById("error_text").innerHTML = "All fields must be complete";
     return
   }
 
@@ -17,18 +18,13 @@ function xmlHttpRequest() {
       if (xhr.status === 200) {
         // Handle the successful response here
         var response = JSON.parse(xhr.responseText)
-        if (response.status === "The Email already exists") {
-          alert("The Email already exists")
-        }
-        else if(response.status === "All fields must be complete"){
-          alert("All fields must be complete")
-        }
-        else if(response.status === "Invalid email"){
-          alert("Invalid email")
-        }
-        else if (response.status === "Sign up Succsessfully") {
+        if (response.status === "Sign up Succsessfully") {
           localStorage.setItem("sign_up_user_name" , response.user_name);
           location.replace("form_sucsess.html");
+        }
+        else {
+          document.getElementById("sign_up_error").hidden = false;
+          document.getElementById("error_text").innerHTML = response.status;
         }
       } else {
         // Handle errors here
@@ -46,7 +42,7 @@ function xmlHttpRequest() {
 }
 
 // Attach form submission to the button click event
-var signUpButton = document.getElementById("Sign Up");
+var signUpButton = document.getElementById("SignUp");
 signUpButton.addEventListener("click", function (event) {
   event.preventDefault(); // Prevent default form submission
   xmlHttpRequest(); // Call the AJAX submission function
