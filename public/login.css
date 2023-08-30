@@ -7,11 +7,11 @@ body {
 
 html {
   overflow-y: hidden;
-  background-image: url(./images/background.jpg);
+  background-image: url(./images/LaPasta.png); 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
 }
