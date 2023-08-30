@@ -1,110 +1,105 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Registration</title>
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css" />
   <link rel="stylesheet" href="form.css" />
-
 </head>
-
 <body>
-  <a href="index.html"><i class="fa fa-home" aria-hidden="true" style="color: black;font-size: 40px;"></i></a>
   <section class="hero is-fullheight">
     <div class="hero-body">
       <div class="container has-text-centered">
         <div class="column is-4 is-offset-4">
+          
           <div class="box">
+            <p class="subtitle is-4">Create an account</p>
             <div class="field">
               <p class="control has-icons-left has-icons-right">
-                <input type="text" class="box" id="name" name="name" placeholder="Name" />
+                <input class="input is-medium" type="text" id="name" name="name" placeholder="Name" />
                 <span class="icon is-medium is-left">
+                <i class="fa fa-user" aria-hidden="true"></i>
                 </span>
-                <span class="icon is-medium is-right">
-                </span>
+
+
               </p>
             </div>
             <div class="field">
               <p class="control has-icons-left has-icons-right">
-                <input type="email" class="box" id="email" name="email" placeholder="Email" />
-
+                <input class="input is-medium" type="email" id="email" name="email" placeholder="Email" />
                 <span class="icon is-medium is-left">
-                </span>
-                <span class="icon is-medium is-right">
+                  <i class="fas fa-envelope"></i>
                 </span>
               </p>
             </div>
             <div class="field">
               <p class="control has-icons-left">
-                <input type="number" class="box" id="phone" name="phone" placeholder="Mobile" /> <span
-                  class="icon is-small is-left">
+                <input class="input is-medium" type="number" id="phone" name="phone" placeholder="Mobile" />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-mobile-alt"></i>
                 </span>
-                <span class="icon is-medium is-right">
-                </span>
+
               </p>
             </div>
             <div class="field">
               <p class="control has-icons-left">
-                <input type="password" class="box" id="password" name="password" placeholder="Password" />
+                <input class="input is-medium" type="password" id="password" name="password" placeholder="Password" />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
                 </span>
-
               </p>
             </div>
-            </p>
+            <button class="button is-block is-info is-large is-fullwidth" id="SignUp">Sign Up</button><br />
+            <p class="subtitle is-5" style="color: white;">Sign Up using Social Media</p>
+            <div class="buttons is-centered" style="margin-bottom: 0;">
+              <a class="button is-medium is-facebook">
+                <span class="icon">
+                  <i class="fab fa-facebook-f fa-lg"></i>
+                </span>
+              </a>
+              <a class="button is-medium is-twitter">
+                <span class="icon">
+                  <i class="fab fa-twitter fa-lg"></i>
+                </span>
+              </a>
+              <a class="button is-medium is-github">
+                <span class="icon">
+                  <i class="fab fa-github fa-lg"></i>
+                </span>
+              </a>
+            </div>
           </div>
-          <div class="field">
-
+          <p class="has-text-grey">
+           
+            <a href="contactus.html">Need Help?</a>
+          </p>
+          <div class="languages select is-small is-rounded">
+            <select>
+              <option selected>English</option>
+              <option>French</option>
+              <option>German</option>
+              <option>Italian</option>
+            </select>
           </div>
-          <button class="button is-block is-info is-large is-fullwidth" id="Sign Up">Sign Up</button><br />
-          <p class="subtitle is-5" style="color: rgb(255, 255, 255);">Sign Up using Social Media</p>
-          <div class="buttons is-centered" style="margin-bottom: 0;">
-            <a class="button is-medium is-facebook">
-              <span class="icon">
-                <i class="fab fa-facebook-f fa-lg"></i>
-              </span>
-            </a>
-            <a class="button is-medium is-twitter">
-              <span class="icon">
-                <i class="fab fa-twitter fa-lg"></i>
-              </span>
-            </a>
-            <a class="button is-medium is-github">
-              <span class="icon">
-                <i class="fab fa-github fa-lg"></i>
-              </span>
-            </a>
-          </div>
-        </div>
-        <p class="has-text-grey">
-          <a href="contactus.html">Need Help?</a>
-        </p>
-        <div class="languages select is-small is-rounded">
-          <select>
-            <option selected>English</option>
-            <option>French</option>
-            <option>German</option>
-            <option>Italian</option>
-          </select>
         </div>
       </div>
-    </div>
     </div>
     <div class="hero-foot">
       <div class="container has-text-centered">
-        <p class="footer-text">
-
-        </p>
+     
       </div>
     </div>
   </section>
+  <div class="home-icon">
+    <a href="index.html">
+      <i class="fa fa-home" aria-hidden="true"></i>
+    </a>
+  </div>
   <script src="./form.js"></script>
 </body>
-
 </html>
