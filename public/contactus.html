@@ -7,7 +7,7 @@
       href="images/LaPastaLogo.png"
       type="image/x-icon"
     />
-
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -161,6 +161,14 @@
             <div class="inputBox">
               <textarea id="text"></textarea>
               <span>Type Your Message...</span>
+            </div>
+            <div id="contactus_error" class="contactus_error" hidden="true">
+              <img src="./images/icon.png" class="error_icon" alt="icon">
+              <p class="subtitle is-7" id="error_text" style="padding-top: 0rem; color: red; margin-top: 1px; margin-bottom: 0px; font-size: .75rem; font-weight: 400; line-height: 1.25; font-family: 'Quicksand', serif;"></p>
+            </div>
+            <div id="contactus_success" class="contactus_success" hidden="true">
+              <img src="./images/success_icon.png" class="error_icon" alt="icon">
+              <p class="subtitle is-7" id="success_text" style="padding-top: 0rem; color: #6BC839; margin-top: 1px; margin-bottom: 0px; font-size: .75rem; font-weight: 400; line-height: 1.25; font-family: 'Quicksand', serif;"></p>
             </div>
             <div class="inputBox">
               <input type="submit" id="send" value="Send" />

@@ -552,3 +552,39 @@ footer a {
 .checkIcon {
   color: green;
 }
+
+.contactus_error {
+  display: flex;
+  border: 1px solid #ff0033;
+  border-radius: 12px;
+  background-color: #ffffff;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+  text-align: start;
+  align-items: center;
+
+}
+
+.error_icon{
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+
+.contactus_success{
+  display: flex;
+  border: 1px solid #6BC839;
+  border-radius: 12px;
+  background-color: #ffffff;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+  text-align: start;
+  align-items: center;
+
+}
+
+[hidden]{
+  display:none;
+}

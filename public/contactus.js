@@ -3,7 +3,9 @@ function xmlHttpRequest() {
     var email = document.getElementById("email").value
     var text = document.getElementById("text").value
     if (full_name === "" || email === "" || text === "") {
-        alert("All fields must be complete")
+        document.getElementById("contactus_success").hidden = true;
+        document.getElementById("contactus_error").hidden = false;
+        document.getElementById("error_text").innerHTML = "All fields must be complete";
         return
     }
 
@@ -15,6 +17,9 @@ function xmlHttpRequest() {
             if (xhr.status === 200) {
                 // Handle the successful response here
                 var response = JSON.parse(xhr.responseText)
+                document.getElementById("contactus_error").hidden = true;
+                document.getElementById("contactus_success").hidden = false;
+                document.getElementById("success_text").innerHTML = "The message was sent successfully";
             } else {
                 // Handle errors here
                 console.error("Error:", xhr.statusText);
@@ -33,5 +38,4 @@ function xmlHttpRequest() {
 var signUpButton = document.getElementById("send");
 signUpButton.addEventListener("click", function (event) {
     xmlHttpRequest();
-    location.replace("contactus.html");
 });
