@@ -43,7 +43,8 @@ app.post('/sign_up', async (req, res) => {
         "name": name,
         "email": email,
         "phone": phone,
-        "password": password
+        "password": password,
+        "items": "{}"
     }
 
     db.collection('users').findOne({ email: data.email }, (err, user) => {
