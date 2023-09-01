@@ -93,28 +93,19 @@ $(document).ready(function () {
     let foodPrice = Number(
       quantity.parent().siblings("div").children().last().text()
     );
-    let isVeg = quantity
-      .parent()
-      .siblings("div")
-      .children()
-      .first()
-      .children()
-      .first()
-      .children()
-      .hasClass("vegIcon");
 
     let count = Number(quantity.text());
     if ($(this)[0].className.search("plus") > -1) {
       count = count + 1;
       quantity.text(count);
-      ToCart(foodNameClicked, count, isVeg, foodPrice, 1);
+      ToCart(foodNameClicked, count, foodPrice, 1);
     } else if ($(this)[0].className.search("minus") > -1) {
       if (count <= 0) {
         quantity.text(0);
       } else {
         count = count - 1;
         quantity.text(count);
-        ToCart(foodNameClicked, count, isVeg, foodPrice, -1);
+        ToCart(foodNameClicked, count, foodPrice, -1);
       }
     }
   });
@@ -137,11 +128,19 @@ $(document).ready(function () {
     localStorage.setItem("items", JSON.stringify({}))
     localStorage.setItem("user_items", JSON.stringify({}))
   } else {
-    for (const value of Object.values(JSON.parse(items))) {
-      ToCart(value[0], value[1], value[2], value[3], value[1]);
-      $(".quantity").filter((index, element) => {
-        return $(element).parent().siblings("div").children().first().text().trim() === value[0];
-      }).text(value[1])
+    for (const [key, value] of Object.entries(JSON.parse(items))) {
+      
+      let quantity = $(".quantity").filter((index, element) => {
+        return $(element).parent().siblings("div").children().first().text().trim() === key;
+      })
+
+      let foodPrice = Number(
+        quantity.parent().siblings("div").children().last().text()
+      );
+
+      quantity.text(value)
+
+      ToCart(key, value, foodPrice, value);
     }
   }
 
@@ -156,7 +155,7 @@ $(document).ready(function () {
   });
 });
 
-function ToCart(foodNameClicked, foodQuantity, isVeg, foodPrice, amountToAdd) {
+function ToCart(foodNameClicked, foodQuantity, foodPrice, amountToAdd) {
   let foodAlreadyThere = false;
   let foodPos;
   for (var i = 0; i < food.length; i++) {
@@ -175,7 +174,7 @@ function ToCart(foodNameClicked, foodQuantity, isVeg, foodPrice, amountToAdd) {
     delete items[foodNameClicked];
   }
   else {
-  items[foodNameClicked] = [foodNameClicked, foodQuantity, isVeg, foodPrice];
+  items[foodNameClicked] = foodQuantity;
   }
 
   if(user === null) {

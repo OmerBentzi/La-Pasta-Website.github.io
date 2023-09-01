@@ -149,7 +149,8 @@ app.post('/set_items', async (req, res) => {
         if (err) {
             throw err;
         }
-        console.log(result);
+        console.log('success Update')
+        return res.json({ status: 'success' })
     });
 });
 
