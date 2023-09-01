@@ -131,9 +131,11 @@ $(document).ready(function () {
     document.getElementById("user_name").innerHTML = "Hi , " + user_name;
   }
 
-  let items = localStorage.getItem("items");
+  let user = localStorage.getItem("user_email");
+  let items = user === null ? localStorage.getItem("items") : localStorage.getItem("user_items");
   if (items === null) {
     localStorage.setItem("items", JSON.stringify({}))
+    localStorage.setItem("user_items", JSON.stringify({}))
   } else {
     for (const value of Object.values(JSON.parse(items))) {
       ToCart(value[0], value[1], value[2], value[3], value[1]);
@@ -146,9 +148,11 @@ $(document).ready(function () {
   document.getElementById("logout").addEventListener("click", function (event) {
     localStorage.removeItem("user_name");
     localStorage.removeItem("user_email");
+    localStorage.removeItem("user_items");
     document.getElementById("logout").hidden = true;
     document.getElementById("user_name").hidden = true;
     document.getElementById("login").hidden = false;
+    location.replace("index.html");
   });
 });
 
@@ -165,9 +169,22 @@ function ToCart(foodNameClicked, foodQuantity, isVeg, foodPrice, amountToAdd) {
     }
   }
 
-  items = JSON.parse(localStorage.getItem("items"));
+  user = localStorage.getItem("user_email");
+  items = user === null ? JSON.parse(localStorage.getItem("items")) : JSON.parse(localStorage.getItem("user_items"));
+  if (foodQuantity === 0) {
+    delete items[foodNameClicked];
+  }
+  else {
   items[foodNameClicked] = [foodNameClicked, foodQuantity, isVeg, foodPrice];
+  }
+
+  if(user === null) {
   localStorage.setItem("items", JSON.stringify(items));
+  } else {
+    localStorage.setItem("user_items", JSON.stringify(items));
+  }
+
+  set_items();
 
   if (foodAlreadyThere) {
     food.splice(foodPos, 1);
@@ -293,4 +310,33 @@ function openWhatsapp() {
     let wTxtEncoded = encodeURI(wTxt);
     window.open("https://wa.me/972584000183?text=" + wTxtEncoded);
   }
+}
+
+function set_items() {
+  var email = localStorage.getItem("user_email");
+  var items = localStorage.getItem("user_items");
+
+  if (!email) {
+    return
+  }
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "/set_items", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        // Handle the successful response here
+        var response = JSON.parse(xhr.responseText)
+      } else {
+        // Handle errors here
+        console.error("Error:", xhr.statusText);
+      }
+    }
+  };
+
+  var data = "email=" + encodeURIComponent(email) +
+    "&items=" + encodeURIComponent(items);
+
+  xhr.send(data);
 }

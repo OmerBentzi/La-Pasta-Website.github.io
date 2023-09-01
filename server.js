@@ -96,7 +96,7 @@ app.post('/log_in', async (req, res) => {
             // Passwords match, log in successfully
             console.log("Log In Successfully");
             console.log(user.name);
-            return res.json({ status: 'Log In Successfully', user_name: user.name, user_email: user.email })
+            return res.json({ status: 'Log In Successfully', user_name: user.name, user_email: user.email , user_items: user.items })
         }
 
         else {
@@ -130,6 +130,29 @@ app.post('/contactus', async (req, res) => {
     });
 })
 
+app.post('/set_items', async (req, res) => {
+    var email = req.body.email;
+    var items = req.body.items;
+
+    if (!email || !items) {
+        console.log('All fields must be complete')
+        return res.json({ status: 'All fields must be complete' })
+    }
+
+    var data = {
+        "email": email,
+        "items": items
+    }
+    db.collection('users').updateOne({ email: data.email} ,{$set: {
+        items: data.items
+      }} , (err, result) => {
+        if (err) {
+            throw err;
+        }
+        console.log(result);
+    });
+});
+
 app.get('/sign_up', (req, res) => {
     res.set({
         'Access-Control-Allow-Origin': '*'
@@ -150,6 +173,13 @@ app.get('/contactus', (req, res) => {
         'Access-Control-Allow-Origin': '*'
     });
     return res.sendFile('/contactus.html');
+});
+
+app.get('/set_items', (req, res) => {
+    res.set({
+        'Access-Control-Allow-Origin': '*'
+    });
+    return res.sendFile('/index.html');
 });
 
 const port = 3000;
