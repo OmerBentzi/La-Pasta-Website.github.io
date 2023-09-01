@@ -125,8 +125,8 @@ $(document).ready(function () {
   let user = localStorage.getItem("user_email");
   let items = user === null ? localStorage.getItem("items") : localStorage.getItem("user_items");
   if (items === null) {
-    localStorage.setItem("items", JSON.stringify({}))
-    localStorage.setItem("user_items", JSON.stringify({}))
+    localStorage.setItem("items", JSON.stringify({}));
+    localStorage.setItem("user_items", JSON.stringify({}));
   } else {
     for (const [key, value] of Object.entries(JSON.parse(items))) {
       
@@ -138,7 +138,7 @@ $(document).ready(function () {
         quantity.parent().siblings("div").children().last().text()
       );
 
-      quantity.text(value)
+      quantity.text(value);
 
       ToCart(key, value, foodPrice, value);
     }
@@ -151,7 +151,14 @@ $(document).ready(function () {
     document.getElementById("logout").hidden = true;
     document.getElementById("user_name").hidden = true;
     document.getElementById("login").hidden = false;
-    location.replace("index.html");
+    location.reload();
+  });
+
+  document.getElementById("clear_cart").addEventListener("click", function (event) {
+    localStorage.setItem('items', JSON.stringify({})); 
+    localStorage.setItem('user_items', JSON.stringify({})); 
+    set_items();
+    location.reload();
   });
 });
 
