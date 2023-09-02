@@ -85,10 +85,6 @@ We welcome contributions to enhance the features and user experience of LaPasta.
 4. Push your changes to your forked repository.
 5. Create a pull request to the main repository's `main` branch, detailing your changes and improvements.
 
-## License
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
-
 ---
 
 Thank you for choosing LaPasta! We hope you enjoy using our online food ordering website. If you encounter any issues or have suggestions for improvements, please don't hesitate to reach out to us. Happy ordering! 🍝🍕
