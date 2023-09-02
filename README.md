@@ -87,7 +87,7 @@ We welcome contributions to enhance the features and user experience of LaPasta.
 
 ## License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License
 
 ---
 
