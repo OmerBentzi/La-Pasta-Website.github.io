@@ -19,6 +19,7 @@ function xmlHttpRequest() {
         if (response.status === "Log In Successfully") {
           localStorage.setItem("user_name", response.user_name);
           localStorage.setItem("user_email", response.user_email);
+          localStorage.setItem("user_items", response.user_items);
           location.replace("index.html")
         }
         else {

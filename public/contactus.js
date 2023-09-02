@@ -34,6 +34,15 @@ function xmlHttpRequest() {
     xhr.send(data);
 }
 
+var email = localStorage.getItem("user_email")
+if(email !== null){
+    document.getElementById("email").value = email;
+}
+
+var userName = localStorage.getItem("user_name")
+if(userName !== null){
+    document.getElementById("full_name").value = userName;
+}
 
 var signUpButton = document.getElementById("send");
 signUpButton.addEventListener("click", function (event) {

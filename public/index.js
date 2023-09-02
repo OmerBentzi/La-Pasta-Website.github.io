@@ -93,28 +93,19 @@ $(document).ready(function () {
     let foodPrice = Number(
       quantity.parent().siblings("div").children().last().text()
     );
-    let isVeg = quantity
-      .parent()
-      .siblings("div")
-      .children()
-      .first()
-      .children()
-      .first()
-      .children()
-      .hasClass("vegIcon");
 
     let count = Number(quantity.text());
     if ($(this)[0].className.search("plus") > -1) {
       count = count + 1;
       quantity.text(count);
-      ToCart(foodNameClicked, count, isVeg, foodPrice, 1);
+      ToCart(foodNameClicked, count, foodPrice, 1);
     } else if ($(this)[0].className.search("minus") > -1) {
       if (count <= 0) {
         quantity.text(0);
       } else {
         count = count - 1;
         quantity.text(count);
-        ToCart(foodNameClicked, count, isVeg, foodPrice, -1);
+        ToCart(foodNameClicked, count, foodPrice, -1);
       }
     }
   });
@@ -131,28 +122,47 @@ $(document).ready(function () {
     document.getElementById("user_name").innerHTML = "Hi , " + user_name;
   }
 
-  let items = localStorage.getItem("items");
+  let user = localStorage.getItem("user_email");
+  let items = user === null ? localStorage.getItem("items") : localStorage.getItem("user_items");
   if (items === null) {
-    localStorage.setItem("items", JSON.stringify({}))
+    localStorage.setItem("items", JSON.stringify({}));
+    localStorage.setItem("user_items", JSON.stringify({}));
   } else {
-    for (const value of Object.values(JSON.parse(items))) {
-      ToCart(value[0], value[1], value[2], value[3], value[1]);
-      $(".quantity").filter((index, element) => {
-        return $(element).parent().siblings("div").children().first().text().trim() === value[0];
-      }).text(value[1])
+    for (const [key, value] of Object.entries(JSON.parse(items))) {
+      
+      let quantity = $(".quantity").filter((index, element) => {
+        return $(element).parent().siblings("div").children().first().text().trim() === key;
+      })
+
+      let foodPrice = Number(
+        quantity.parent().siblings("div").children().last().text()
+      );
+
+      quantity.text(value);
+
+      ToCart(key, value, foodPrice, value);
     }
   }
 
   document.getElementById("logout").addEventListener("click", function (event) {
     localStorage.removeItem("user_name");
     localStorage.removeItem("user_email");
+    localStorage.removeItem("user_items");
     document.getElementById("logout").hidden = true;
     document.getElementById("user_name").hidden = true;
     document.getElementById("login").hidden = false;
+    location.reload();
+  });
+
+  document.getElementById("clear_cart").addEventListener("click", function (event) {
+    localStorage.setItem('items', JSON.stringify({})); 
+    localStorage.setItem('user_items', JSON.stringify({})); 
+    set_items();
+    location.reload();
   });
 });
 
-function ToCart(foodNameClicked, foodQuantity, isVeg, foodPrice, amountToAdd) {
+function ToCart(foodNameClicked, foodQuantity, foodPrice, amountToAdd) {
   let foodAlreadyThere = false;
   let foodPos;
   for (var i = 0; i < food.length; i++) {
@@ -165,9 +175,22 @@ function ToCart(foodNameClicked, foodQuantity, isVeg, foodPrice, amountToAdd) {
     }
   }
 
-  items = JSON.parse(localStorage.getItem("items"));
-  items[foodNameClicked] = [foodNameClicked, foodQuantity, isVeg, foodPrice];
+  user = localStorage.getItem("user_email");
+  items = user === null ? JSON.parse(localStorage.getItem("items")) : JSON.parse(localStorage.getItem("user_items"));
+  if (foodQuantity === 0) {
+    delete items[foodNameClicked];
+  }
+  else {
+  items[foodNameClicked] = foodQuantity;
+  }
+
+  if(user === null) {
   localStorage.setItem("items", JSON.stringify(items));
+  } else {
+    localStorage.setItem("user_items", JSON.stringify(items));
+  }
+
+  set_items();
 
   if (foodAlreadyThere) {
     food.splice(foodPos, 1);
@@ -293,4 +316,33 @@ function openWhatsapp() {
     let wTxtEncoded = encodeURI(wTxt);
     window.open("https://wa.me/972584000183?text=" + wTxtEncoded);
   }
+}
+
+function set_items() {
+  var email = localStorage.getItem("user_email");
+  var items = localStorage.getItem("user_items");
+
+  if (!email) {
+    return
+  }
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "/set_items", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        // Handle the successful response here
+        var response = JSON.parse(xhr.responseText)
+      } else {
+        // Handle errors here
+        console.error("Error:", xhr.statusText);
+      }
+    }
+  };
+
+  var data = "email=" + encodeURIComponent(email) +
+    "&items=" + encodeURIComponent(items);
+
+  xhr.send(data);
 }

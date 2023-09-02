@@ -585,6 +585,16 @@ footer a {
 
 }
 
+.Message_status_text{
+  padding-top: 0rem;
+  margin-top: 1px;
+  margin-bottom: 0px;
+  font-size: .75rem;
+  font-weight: 400;
+  line-height: 1.25;
+  font-family: 'Quicksand', serif;
+}
+
 [hidden]{
   display:none;
 }
