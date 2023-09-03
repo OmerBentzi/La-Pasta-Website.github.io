@@ -316,6 +316,12 @@ function openWhatsapp() {
 
     let wTxtEncoded = encodeURI(wTxt);
     window.open("https://wa.me/972584000183?text=" + wTxtEncoded);
+    if(localStorage.getItem("user_email") !== null){
+      localStorage.removeItem("user_items");
+    } else {
+      localStorage.removeItem("items");
+    }
+    location.reload();
   }
 }
 
