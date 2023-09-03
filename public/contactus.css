@@ -566,13 +566,13 @@ footer a {
 
 }
 
-.error_icon{
+.error_icon {
   width: 15px;
   height: 15px;
   margin-right: 10px;
 }
 
-.contactus_success{
+.contactus_success {
   display: flex;
   border: 1px solid #6BC839;
   border-radius: 12px;
@@ -585,7 +585,7 @@ footer a {
 
 }
 
-.Message_status_text{
+.Message_status_text {
   padding-top: 0rem;
   margin-top: 1px;
   margin-bottom: 0px;
@@ -595,6 +595,6 @@ footer a {
   font-family: 'Quicksand', serif;
 }
 
-[hidden]{
-  display:none;
+[hidden] {
+  display: none;
 }

@@ -7,7 +7,7 @@ body {
 
 html {
   overflow-y: hidden;
-  background-image: url(./images/LaPasta.png); 
+  background-image: url(./images/LaPasta.png);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -25,6 +25,7 @@ html {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
 .home-button {
   position: absolute;
   top: 20px;
@@ -36,6 +37,7 @@ html {
   border-radius: 5px;
   font-size: 16px;
 }
+
 .box {
   width: 80%;
   /* Adjust the width of the box */
@@ -101,12 +103,12 @@ a:hover {
 
 }
 
-.error_icon{
+.error_icon {
   width: 15px;
   height: 15px;
   margin-right: 10px;
 }
 
-[hidden]{
-  display:none;
+[hidden] {
+  display: none;
 }

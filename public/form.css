@@ -11,6 +11,7 @@ html {
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .home-button {
   position: absolute;
   top: 20px;
@@ -22,6 +23,7 @@ html {
   border-radius: 5px;
   font-size: 16px;
 }
+
 .box {
   width: 80%;
   max-width: 400px;
@@ -53,12 +55,14 @@ a:hover {
 .languages {
   margin-top: 10px;
 }
+
 .home-icon {
   position: absolute;
   top: 500px;
-  left:470px;
+  left: 470px;
   z-index: 1000;
 }
+
 .footer-text {
   font-weight: initial;
 }
@@ -87,12 +91,12 @@ a:hover {
   align-items: center;
 }
 
-.error_icon{
+.error_icon {
   width: 15px;
   height: 15px;
   margin-right: 10px;
 }
 
-[hidden]{
-  display:none;
+[hidden] {
+  display: none;
 }
