@@ -129,7 +129,7 @@ $(document).ready(function () {
     localStorage.setItem("user_items", JSON.stringify({}));
   } else {
     for (const [key, value] of Object.entries(JSON.parse(items))) {
-
+      
       let quantity = $(".quantity").filter((index, element) => {
         return $(element).parent().siblings("div").children().first().text().trim() === key;
       })
@@ -155,8 +155,8 @@ $(document).ready(function () {
   });
 
   document.getElementById("clear_cart").addEventListener("click", function (event) {
-    localStorage.setItem('items', JSON.stringify({}));
-    localStorage.setItem('user_items', JSON.stringify({}));
+    localStorage.setItem('items', JSON.stringify({})); 
+    localStorage.setItem('user_items', JSON.stringify({})); 
     set_items();
     location.reload();
   });
@@ -181,11 +181,11 @@ function ToCart(foodNameClicked, foodQuantity, foodPrice, amountToAdd) {
     delete items[foodNameClicked];
   }
   else {
-    items[foodNameClicked] = foodQuantity;
+  items[foodNameClicked] = foodQuantity;
   }
 
   if (user === null) {
-    localStorage.setItem("items", JSON.stringify(items));
+  localStorage.setItem("items", JSON.stringify(items));
   } else {
     localStorage.setItem("user_items", JSON.stringify(items));
   }
