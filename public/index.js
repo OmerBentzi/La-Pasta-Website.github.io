@@ -255,16 +255,20 @@ function openWhatsapp() {
   const customerName = document.getElementById("customerName").value;
 
   if (customerName === "") {
-    alert("Customer name cannot be empty. Please try again.");
+    document.getElementById("cart_error").hidden=false;
+    document.getElementById("error_text").innerHTML = "Customer name cannot be empty. Please try again.";
     return;
   }
 
   // console.log($('#address'));
 
   if ($("#address")[0].value === "") {
-    alert("Please Enter Address");
+    document.getElementById("cart_error").hidden=false;
+    document.getElementById("error_text").innerHTML = "Please Enter Address";
     return;
   } else {
+    document.getElementById("cart_error").hidden=true;
+
     let total = 0;
     let address = $("#address")[0].value;
     let note = $("#note")[0].value;
