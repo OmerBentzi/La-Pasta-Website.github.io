@@ -20,7 +20,7 @@ function xmlHttpRequest() {
           localStorage.setItem("user_name", response.user_name);
           localStorage.setItem("user_email", response.user_email);
           localStorage.setItem("user_items", response.user_items);
-          location.replace("index.html")
+          location.replace("index.html");
         }
         else {
           document.getElementById("login_error").hidden = false;
@@ -40,8 +40,18 @@ function xmlHttpRequest() {
 }
 
 // Attach form submission to the button click event
-var signUpButton = document.getElementById("Login");
-signUpButton.addEventListener("click", function (event) {
+var LoginButton = document.getElementById("Login");
+LoginButton.addEventListener("click", function (event) {
   event.preventDefault(); // Prevent default form submission
-  xmlHttpRequest(); // Call the AJAX submission function
+  xmlHttpRequest();
+});
+
+var box = document.getElementById("box");
+box.addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    xmlHttpRequest();
+  }
 });
