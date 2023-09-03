@@ -25,7 +25,17 @@ html {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-
+.home-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+}
 .box {
   width: 80%;
   /* Adjust the width of the box */
