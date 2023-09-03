@@ -120,6 +120,7 @@ $(document).ready(function () {
     document.getElementById("user_name").hidden = false;
     document.getElementById("logout").hidden = false;
     document.getElementById("user_name").innerHTML = "Hi , " + user_name;
+    document.getElementById("customerName").value = user_name;
   }
 
   let user = localStorage.getItem("user_email");
