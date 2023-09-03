@@ -97,7 +97,7 @@ app.post('/log_in', async (req, res) => {
             // Passwords match, log in successfully
             console.log("Log In Successfully");
             console.log(user.name);
-            return res.json({ status: 'Log In Successfully', user_name: user.name, user_email: user.email , user_items: user.items })
+            return res.json({ status: 'Log In Successfully', user_name: user.name, user_email: user.email, user_items: user.items })
         }
 
         else {
@@ -144,9 +144,11 @@ app.post('/set_items', async (req, res) => {
         "email": email,
         "items": items
     }
-    db.collection('users').updateOne({ email: data.email} ,{$set: {
-        items: data.items
-      }} , (err, result) => {
+    db.collection('users').updateOne({ email: data.email }, {
+        $set: {
+            items: data.items
+        }
+    }, (err, result) => {
         if (err) {
             throw err;
         }

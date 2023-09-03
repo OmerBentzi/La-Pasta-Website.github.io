@@ -35,12 +35,12 @@ function xmlHttpRequest() {
 }
 
 var email = localStorage.getItem("user_email")
-if(email !== null){
+if (email !== null) {
     document.getElementById("email").value = email;
 }
 
 var userName = localStorage.getItem("user_name")
-if(userName !== null){
+if (userName !== null) {
     document.getElementById("full_name").value = userName;
 }
 

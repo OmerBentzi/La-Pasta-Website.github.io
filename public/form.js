@@ -4,7 +4,7 @@ function xmlHttpRequest() {
   var phone = document.getElementById("phone").value;
   var password = document.getElementById("password").value;
 
-  if ( !name || !email || !phone || !password) {
+  if (!name || !email || !phone || !password) {
     document.getElementById("sign_up_error").hidden = false;
     document.getElementById("error_text").innerHTML = "All fields must be complete";
     return
@@ -19,7 +19,7 @@ function xmlHttpRequest() {
         // Handle the successful response here
         var response = JSON.parse(xhr.responseText)
         if (response.status === "Sign up Succsessfully") {
-          localStorage.setItem("sign_up_user_name" , response.user_name);
+          localStorage.setItem("sign_up_user_name", response.user_name);
           location.replace("form_sucsess.html");
         }
         else {
