@@ -4,30 +4,11 @@ $(document).ready(function () {
     if (email && userName) {
         document.getElementById("email").value = email;
         document.getElementById("full_name").value = userName;
-        document.getElementById("login").hidden = true;
-        document.getElementById("logout").hidden = false;
-        document.getElementById("user_name").hidden = false;
-        document.getElementById("user_name").innerHTML = "Hi , " + localStorage.getItem("user_name");
-
-    } else {
-        document.getElementById("user_name").hidden = true;
-        document.getElementById("logout").hidden = true;
-        document.getElementById("login").hidden = false;
     }
 
     var contactUsButton = document.getElementById("send");
     contactUsButton.addEventListener("click", function (event) {
         xmlHttpRequest();
-    });
-
-    document.getElementById("logout").addEventListener("click", function (event) {
-        localStorage.removeItem("user_name");
-        localStorage.removeItem("user_email");
-        localStorage.removeItem("user_items");
-        document.getElementById("logout").hidden = true;
-        document.getElementById("user_name").hidden = true;
-        document.getElementById("login").hidden = false;
-        location.reload();
     });
 });
 

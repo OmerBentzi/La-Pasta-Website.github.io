@@ -111,15 +111,7 @@ $(document).ready(function () {
   });
 
   var user_name = localStorage.getItem('user_name');
-  if (user_name === null) {
-    document.getElementById("user_name").hidden = true;
-    document.getElementById("logout").hidden = true;
-    document.getElementById("login").hidden = false;
-  } else {
-    document.getElementById("login").hidden = true;
-    document.getElementById("user_name").hidden = false;
-    document.getElementById("logout").hidden = false;
-    document.getElementById("user_name").innerHTML = "Hi , " + user_name;
+  if (user_name !== null) {
     document.getElementById("customerName").value = user_name;
   }
 
@@ -144,16 +136,6 @@ $(document).ready(function () {
       ToCart(key, value, foodPrice, value);
     }
   }
-
-  document.getElementById("logout").addEventListener("click", function (event) {
-    localStorage.removeItem("user_name");
-    localStorage.removeItem("user_email");
-    localStorage.removeItem("user_items");
-    document.getElementById("logout").hidden = true;
-    document.getElementById("user_name").hidden = true;
-    document.getElementById("login").hidden = false;
-    location.reload();
-  });
 
   document.getElementById("clear_cart").addEventListener("click", function (event) {
     localStorage.setItem('items', JSON.stringify({})); 
@@ -321,9 +303,10 @@ function openWhatsapp() {
     let wTxtEncoded = encodeURI(wTxt);
     window.open("https://wa.me/972584000183?text=" + wTxtEncoded);
     if(localStorage.getItem("user_email") !== null){
-      localStorage.removeItem("user_items");
+      localStorage.setItem('user_items', JSON.stringify({})); 
+      set_items();
     } else {
-      localStorage.removeItem("items");
+      localStorage.setItem('items', JSON.stringify({}));
     }
     location.reload();
   }
