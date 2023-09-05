@@ -332,7 +332,7 @@ function set_items() {
         // Handle errors here
         console.error("Error:", xhr.statusText);
         var response = JSON.parse(xhr.responseText);
-        if (response.redirect === "login") {
+        if (response.redirect && response.redirect === "login") {
           localStorage.removeItem("token");
           localStorage.removeItem("user_email");
           localStorage.removeItem("user_name");
