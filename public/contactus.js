@@ -17,9 +17,11 @@ function xmlHttpRequest() {
     var email = document.getElementById("email").value
     var text = document.getElementById("text").value
     if (full_name === "" || email === "" || text === "") {
+        document.getElementById("contactus_success").style.opacity = 0;
         document.getElementById("contactus_success").hidden = true;
-        document.getElementById("contactus_error").hidden = false;
         document.getElementById("error_text").innerHTML = "All fields must be complete";
+        document.getElementById("contactus_error").hidden = false;
+        show("contactus_error");
         return
     }
 
@@ -31,9 +33,11 @@ function xmlHttpRequest() {
             if (xhr.status === 200) {
                 // Handle the successful response here
                 var response = JSON.parse(xhr.responseText)
+                document.getElementById("contactus_error").style.opacity = 0;
                 document.getElementById("contactus_error").hidden = true;
-                document.getElementById("contactus_success").hidden = false;
                 document.getElementById("success_text").innerHTML = "The message was sent successfully";
+                document.getElementById("contactus_success").hidden = false;
+                show("contactus_success");
             } else {
                 // Handle errors here
                 console.error("Error:", xhr.statusText);
@@ -46,4 +50,14 @@ function xmlHttpRequest() {
         "&text=" + encodeURIComponent(text);
 
     xhr.send(data);
+}
+
+function show(div){
+    var interval = setInterval(() => {
+        if (document.getElementById(div).style.opacity >= 1) {
+            console.log(document.getElementById(div).style.opacity);
+            clearInterval(interval);
+        }
+        document.getElementById(div).style.opacity = Number(document.getElementById(div).style.opacity) + 0.05;
+    }, 10); 
 }

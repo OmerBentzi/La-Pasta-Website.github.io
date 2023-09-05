@@ -24,8 +24,8 @@ function xmlHttpRequest() {
   var password = document.getElementById("password").value;
 
   if (!name || !email || !phone || !password) {
-    document.getElementById("sign_up_error").hidden = false;
     document.getElementById("error_text").innerHTML = "All fields must be complete";
+    show_error();
     return
   }
 
@@ -42,8 +42,8 @@ function xmlHttpRequest() {
           location.replace("form_sucsess.html");
         }
         else {
-          document.getElementById("sign_up_error").hidden = false;
           document.getElementById("error_text").innerHTML = response.status;
+          show_error();
         }
       } else {
         // Handle errors here
@@ -58,4 +58,14 @@ function xmlHttpRequest() {
     "&password=" + encodeURIComponent(password);
 
   xhr.send(data);
+}
+
+function show_error() {
+  var interval = setInterval(() => {
+    if (document.getElementById("sign_up_error").style.opacity >= 1) {
+      console.log(document.getElementById("sign_up_error").style.opacity);
+      clearInterval(interval);
+    }
+    document.getElementById("sign_up_error").style.opacity = Number(document.getElementById("sign_up_error").style.opacity) + 0.05;
+  }, 10);
 }
