@@ -2,6 +2,8 @@ const jwt = require('jsonwebtoken');
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+const rateLimit = require('express-rate-limit');
+const bcrypt = require('bcrypt');
 const async = require('hbs/lib/async');
 const hbs = require('hbs');
 
@@ -23,6 +25,14 @@ var db = mongoose.connection;
 db.on('error', () => console.log("Error in Connecting To Database"));
 db.once('open', () => console.log("Connected To MongoDB Database"));
 
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes (time window for rate limiting)
+    max: 100, // Max requests allowed in the time window
+    message: JSON.stringify({ status: 'Too many requests from this IP, please try again later.'}),
+});
+
+app.use(limiter);
+
 app.post('/sign_up', async (req, res) => {
     var name = req.body.name;
     var email = req.body.email;
@@ -41,11 +51,13 @@ app.post('/sign_up', async (req, res) => {
         return res.json({ status: 'Invalid email' })
     }
 
+    const hashedPassword = await bcrypt.hash(password, 10);
+
     var data = {
         "name": name,
         "email": email,
         "phone": phone,
-        "password": password,
+        "password": hashedPassword,
         "items": "{}"
     }
 
@@ -75,8 +87,13 @@ app.post('/sign_up', async (req, res) => {
     });
 })
 
+const loginLimiter = rateLimit({
+	windowMs: 15 * 60 * 1000, // 1 hour
+	max: 5, // Limit each IP to 5 create account requests per `window` (here, per hour)
+	message: JSON.stringify({ status:'Too many login requests from this IP, please try again after 15 min'}),
+})
 
-app.post('/log_in', async (req, res) => {
+app.post('/log_in', loginLimiter , async (req, res) => {
     var email = req.body.email;
     var password = req.body.password;
 
@@ -89,12 +106,12 @@ app.post('/log_in', async (req, res) => {
         "email": email,
         "password": password
     }
-    db.collection('users').findOne({ email: data.email, password: data.password }, (err, user) => {
+    db.collection('users').findOne({ email: data.email }, async(err, user) => {
         if (err) {
             throw err;
         }
-
-        if (user) {
+        const passwordMatch = await bcrypt.compare(password, user.password);
+        if (passwordMatch) {
             const token = generateToken(user);
 
             // If user with the provided email exists

@@ -48,6 +48,9 @@ function xmlHttpRequest() {
       } else {
         // Handle errors here
         console.error("Error:", xhr.statusText);
+        response = JSON.parse(xhr.responseText);
+        document.getElementById("error_text").innerHTML = response.status ? response.status : "Failed Request";
+        show_error();
       }
     }
   };
