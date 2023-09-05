@@ -55,7 +55,6 @@ function xmlHttpRequest() {
 function show(div){
     var interval = setInterval(() => {
         if (document.getElementById(div).style.opacity >= 1) {
-            console.log(document.getElementById(div).style.opacity);
             clearInterval(interval);
         }
         document.getElementById(div).style.opacity = Number(document.getElementById(div).style.opacity) + 0.05;

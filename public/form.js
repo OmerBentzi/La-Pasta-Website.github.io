@@ -63,7 +63,6 @@ function xmlHttpRequest() {
 function show_error() {
   var interval = setInterval(() => {
     if (document.getElementById("sign_up_error").style.opacity >= 1) {
-      console.log(document.getElementById("sign_up_error").style.opacity);
       clearInterval(interval);
     }
     document.getElementById("sign_up_error").style.opacity = Number(document.getElementById("sign_up_error").style.opacity) + 0.05;

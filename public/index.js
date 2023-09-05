@@ -242,8 +242,6 @@ function openWhatsapp() {
     return;
   }
 
-  // console.log($('#address'));
-
   if ($("#address")[0].value === "") {
     document.getElementById("error_text").innerHTML = "Please Enter Address";
     show_error();
@@ -354,7 +352,6 @@ function set_items() {
 function show_error() {
   var interval = setInterval(() => {
     if (document.getElementById("cart_error").style.opacity >= 1) {
-      console.log(document.getElementById("cart_error").style.opacity);
       clearInterval(interval);
     }
     document.getElementById("cart_error").style.opacity = Number(document.getElementById("cart_error").style.opacity) + 0.05;
