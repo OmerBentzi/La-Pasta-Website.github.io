@@ -1,3 +1,22 @@
+$(document).ready(function () {
+  // Attach form submission to the button click event
+  var signUpButton = document.getElementById("SignUp");
+  signUpButton.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default form submission
+    xmlHttpRequest(); // Call the AJAX submission function
+  });
+
+  var box = document.getElementById("box");
+  box.addEventListener("keypress", function (event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      xmlHttpRequest();
+    }
+  });
+});
+
 function xmlHttpRequest() {
   var name = document.getElementById("name").value;
   var email = document.getElementById("email").value;
@@ -40,20 +59,3 @@ function xmlHttpRequest() {
 
   xhr.send(data);
 }
-
-// Attach form submission to the button click event
-var signUpButton = document.getElementById("SignUp");
-signUpButton.addEventListener("click", function (event) {
-  event.preventDefault(); // Prevent default form submission
-  xmlHttpRequest(); // Call the AJAX submission function
-});
-
-var box = document.getElementById("box");
-box.addEventListener("keypress", function(event) {
-  // If the user presses the "Enter" key on the keyboard
-  if (event.key === "Enter") {
-    // Cancel the default action, if needed
-    event.preventDefault();
-    xmlHttpRequest();
-  }
-});

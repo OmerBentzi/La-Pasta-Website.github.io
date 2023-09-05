@@ -30,4 +30,28 @@ $(document).ready(function () {
             );
         } // End if
     });
+
+    var email = localStorage.getItem("user_email")
+    var userName = localStorage.getItem("user_name")
+    if (email && userName) {
+        document.getElementById("login").hidden = true;
+        document.getElementById("logout").hidden = false;
+        document.getElementById("user_name").hidden = false;
+        document.getElementById("user_name").innerHTML = "Hi , " + localStorage.getItem("user_name");
+
+    } else {
+        document.getElementById("user_name").hidden = true;
+        document.getElementById("logout").hidden = true;
+        document.getElementById("login").hidden = false;
+    }
+
+    document.getElementById("logout").addEventListener("click", function (event) {
+        localStorage.removeItem("user_name");
+        localStorage.removeItem("user_email");
+        localStorage.removeItem("user_items");
+        document.getElementById("logout").hidden = true;
+        document.getElementById("user_name").hidden = true;
+        document.getElementById("login").hidden = false;
+        location.reload();
+    });
 });

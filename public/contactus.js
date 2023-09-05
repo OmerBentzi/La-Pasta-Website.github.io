@@ -1,3 +1,17 @@
+$(document).ready(function () {
+    var email = localStorage.getItem("user_email")
+    var userName = localStorage.getItem("user_name")
+    if (email && userName) {
+        document.getElementById("email").value = email;
+        document.getElementById("full_name").value = userName;
+    }
+
+    var contactUsButton = document.getElementById("send");
+    contactUsButton.addEventListener("click", function (event) {
+        xmlHttpRequest();
+    });
+});
+
 function xmlHttpRequest() {
     var full_name = document.getElementById("full_name").value
     var email = document.getElementById("email").value
@@ -33,18 +47,3 @@ function xmlHttpRequest() {
 
     xhr.send(data);
 }
-
-var email = localStorage.getItem("user_email")
-if (email !== null) {
-    document.getElementById("email").value = email;
-}
-
-var userName = localStorage.getItem("user_name")
-if (userName !== null) {
-    document.getElementById("full_name").value = userName;
-}
-
-var signUpButton = document.getElementById("send");
-signUpButton.addEventListener("click", function (event) {
-    xmlHttpRequest();
-});
