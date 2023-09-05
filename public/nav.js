@@ -49,6 +49,7 @@ $(document).ready(function () {
         localStorage.removeItem("user_name");
         localStorage.removeItem("user_email");
         localStorage.removeItem("user_items");
+        localStorage.removeItem("token");
         document.getElementById("logout").hidden = true;
         document.getElementById("user_name").hidden = true;
         document.getElementById("login").hidden = false;

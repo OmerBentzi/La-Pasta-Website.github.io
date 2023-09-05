@@ -237,19 +237,19 @@ function openWhatsapp() {
   const customerName = document.getElementById("customerName").value;
 
   if (customerName === "") {
-    document.getElementById("cart_error").hidden=false;
     document.getElementById("error_text").innerHTML = "Customer name cannot be empty. Please try again.";
+    show_error();
     return;
   }
 
   // console.log($('#address'));
 
   if ($("#address")[0].value === "") {
-    document.getElementById("cart_error").hidden=false;
     document.getElementById("error_text").innerHTML = "Please Enter Address";
+    show_error();
     return;
   } else {
-    document.getElementById("cart_error").hidden=true;
+    document.getElementById("cart_error").opacity = 0;
 
     let total = 0;
     let address = $("#address")[0].value;
@@ -315,22 +315,32 @@ function openWhatsapp() {
 function set_items() {
   var email = localStorage.getItem("user_email");
   var items = localStorage.getItem("user_items");
+  var token = localStorage.getItem("token");
 
-  if (!email) {
+  if (!email || !items) {
     return
   }
 
   var xhr = new XMLHttpRequest();
   xhr.open("POST", "/set_items", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.setRequestHeader("Authorization", token);
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
         // Handle the successful response here
-        var response = JSON.parse(xhr.responseText)
+        var response = JSON.parse(xhr.responseText);
       } else {
         // Handle errors here
         console.error("Error:", xhr.statusText);
+        var response = JSON.parse(xhr.responseText);
+        if (response.redirect === "login") {
+          localStorage.removeItem("token");
+          localStorage.removeItem("user_email");
+          localStorage.removeItem("user_name");
+          localStorage.removeItem("user_items");
+          location.replace("login.html");
+        }
       }
     }
   };
@@ -339,4 +349,14 @@ function set_items() {
     "&items=" + encodeURIComponent(items);
 
   xhr.send(data);
+}
+
+function show_error() {
+  var interval = setInterval(() => {
+    if (document.getElementById("cart_error").style.opacity >= 1) {
+      console.log(document.getElementById("cart_error").style.opacity);
+      clearInterval(interval);
+    }
+    document.getElementById("cart_error").style.opacity = Number(document.getElementById("cart_error").style.opacity) + 0.05;
+  }, 10);
 }

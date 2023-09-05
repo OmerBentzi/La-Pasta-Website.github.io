@@ -1,3 +1,4 @@
+const jwt = require('jsonwebtoken');
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
@@ -5,6 +6,7 @@ const async = require('hbs/lib/async');
 const hbs = require('hbs');
 
 const app = express();
+const secretKey = process.env.JWT_SECRET || 'your-secret-key';
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
@@ -93,11 +95,13 @@ app.post('/log_in', async (req, res) => {
         }
 
         if (user) {
+            const token = generateToken(user);
+
             // If user with the provided email exists
             // Passwords match, log in successfully
             console.log("Log In Successfully");
             console.log(user.name);
-            return res.json({ status: 'Log In Successfully', user_name: user.name, user_email: user.email, user_items: user.items })
+            return res.json({ status: 'Log In Successfully', user_name: user.name, user_email: user.email, user_items: user.items, token: token })
         }
 
         else {
@@ -131,7 +135,7 @@ app.post('/contactus', async (req, res) => {
     });
 })
 
-app.post('/set_items', async (req, res) => {
+app.post('/set_items', verifyToken, async (req, res) => {
     var email = req.body.email;
     var items = req.body.items;
 
@@ -189,3 +193,32 @@ const port = 3000;
 app.listen(port, () => {
     console.log(`Server running at port ${port}`);
 });
+
+function generateToken(user) {
+    return jwt.sign({ email: user.email }, secretKey, { expiresIn: '1h' }); // Customize the expiration time as needed
+}
+
+// Middleware to verify the token
+function verifyToken(req, res, next) {
+    const token = req.headers.authorization;
+
+    if (!token) {
+        return res.status(403).json({ status: 'Token not provided' , redirect:'login'});
+    }
+
+    jwt.verify(token, secretKey, (err, decoded) => {
+        if (err) {
+            return res.status(403).json({ status: 'Token is invalid' , redirect:'login'});
+        }
+
+        const emailInToken = decoded.email;
+        const requestedEmail = req.body.email;
+
+        if (emailInToken!== requestedEmail) {
+            return res.status(403).json({ status: 'Token does not match the requested email' , redirect:'login' });
+        }
+
+        req.user = decoded;
+        next();
+    });
+}
