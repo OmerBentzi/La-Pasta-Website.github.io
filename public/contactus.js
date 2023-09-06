@@ -44,8 +44,12 @@ function xmlHttpRequest() {
                 document.getElementById("contactus_success").style.opacity = 0;
                 document.getElementById("contactus_success").hidden = true;
                 document.getElementById("contactus_error").hidden = false;
-                response = JSON.parse(xhr.responseText);
-                document.getElementById("error_text").innerHTML = response.status ? response.status : "Failed Request";
+                try {
+                    response = JSON.parse(xhr.responseText);
+                    document.getElementById("error_text").innerHTML = response.status ? response.status : "Failed Request";
+                } catch (e) {
+                    document.getElementById("error_text").innerHTML = "Failed Request";
+                }
                 show("contactus_error");
             }
         }

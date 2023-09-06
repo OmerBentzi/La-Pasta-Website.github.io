@@ -48,9 +48,13 @@ function xmlHttpRequest() {
         }
       } else {
         // Handle errors here
-        console.error("Error:", xhr.statusText);
-        response = JSON.parse(xhr.responseText);
-        document.getElementById("error_text").innerHTML = response.status ? response.status : "Failed Request";
+        try {
+          console.error("Error:", xhr.statusText);
+          response = JSON.parse(xhr.responseText);
+          document.getElementById("error_text").innerHTML = response.status ? response.status : "Failed Request";
+        } catch (e) {
+          document.getElementById("error_text").innerHTML = "Failed Request";
+        }
         show_error();
       }
     }
