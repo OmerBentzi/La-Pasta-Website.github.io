@@ -2,6 +2,8 @@ const jwt = require('jsonwebtoken');
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+const rateLimit = require('express-rate-limit');
+const bcrypt = require('bcrypt');
 const async = require('hbs/lib/async');
 const hbs = require('hbs');
 
@@ -23,6 +25,14 @@ var db = mongoose.connection;
 db.on('error', () => console.log("Error in Connecting To Database"));
 db.once('open', () => console.log("Connected To MongoDB Database"));
 
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes (time window for rate limiting)
+    max: 250, // Max requests allowed in the time window
+    message: JSON.stringify({ status: 'Too many requests from this IP, please try again later.' }),
+});
+
+app.use(limiter);
+
 app.post('/sign_up', async (req, res) => {
     var name = req.body.name;
     var email = req.body.email;
@@ -41,11 +51,13 @@ app.post('/sign_up', async (req, res) => {
         return res.json({ status: 'Invalid email' })
     }
 
+    const hashedPassword = await bcrypt.hash(password, 10);
+
     var data = {
         "name": name,
         "email": email,
         "phone": phone,
-        "password": password,
+        "password": hashedPassword,
         "items": "{}"
     }
 
@@ -75,6 +87,11 @@ app.post('/sign_up', async (req, res) => {
     });
 })
 
+const loginLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 1 hour
+    max: 5, // Limit each IP to 5 create account requests per `window` (here, per hour)
+    message: JSON.stringify({ status: 'Too many login requests from this IP, please try again after 15 min' }),
+})
 
 app.post('/log_in', async (req, res) => {
     var email = req.body.email;
@@ -89,26 +106,39 @@ app.post('/log_in', async (req, res) => {
         "email": email,
         "password": password
     }
-    db.collection('users').findOne({ email: data.email, password: data.password }, (err, user) => {
+    db.collection('users').findOne({ email: data.email }, async (err, user) => {
         if (err) {
             throw err;
         }
-
         if (user) {
-            const token = generateToken(user);
+            const passwordMatch = await bcrypt.compare(password, user.password);
+            if (passwordMatch) {
+                const token = generateToken(user);
+                loginLimiter.resetKey(req.ip);
+                // If user with the provided email exists
+                // Passwords match, log in successfully
+                console.log("Log In Successfully");
+                console.log(user.name);
+                return res.json({ status: 'Log In Successfully', user_name: user.name, user_email: user.email, user_items: user.items, token: token })
+            }
 
-            // If user with the provided email exists
-            // Passwords match, log in successfully
-            console.log("Log In Successfully");
-            console.log(user.name);
-            return res.json({ status: 'Log In Successfully', user_name: user.name, user_email: user.email, user_items: user.items, token: token })
+            else {
+                // Incorrect Email or Password
+                console.log("Incorrect Email or Password");
+                // You can handle the Incorrect Email or Password case here, like showing an error message
+                loginLimiter(req, res, () => {
+                    return res.json({ status: 'Incorrect Email or Password' });
+                });
+            }
         }
-
         else {
             // Incorrect Email or Password
             console.log("Incorrect Email or Password");
             // You can handle the Incorrect Email or Password case here, like showing an error message
-            return res.json({ status: 'Incorrect Email or Password' })
+            loginLimiter(req, res, () => {
+                return res.json({ status: 'Incorrect Email or Password' });
+            });
+
         }
     });
 });
@@ -203,19 +233,19 @@ function verifyToken(req, res, next) {
     const token = req.headers.authorization;
 
     if (!token) {
-        return res.status(403).json({ status: 'Token not provided' , redirect:'login'});
+        return res.status(403).json({ status: 'Token not provided', redirect: 'login' });
     }
 
     jwt.verify(token, secretKey, (err, decoded) => {
         if (err) {
-            return res.status(403).json({ status: 'Token is invalid' , redirect:'login'});
+            return res.status(403).json({ status: 'Token is invalid', redirect: 'login' });
         }
 
         const emailInToken = decoded.email;
         const requestedEmail = req.body.email;
 
-        if (emailInToken!== requestedEmail) {
-            return res.status(403).json({ status: 'Token does not match the requested email' , redirect:'login' });
+        if (emailInToken !== requestedEmail) {
+            return res.status(403).json({ status: 'Token does not match the requested email', redirect: 'login' });
         }
 
         req.user = decoded;

@@ -122,7 +122,7 @@ $(document).ready(function () {
     localStorage.setItem("user_items", JSON.stringify({}));
   } else {
     for (const [key, value] of Object.entries(JSON.parse(items))) {
-      
+
       let quantity = $(".quantity").filter((index, element) => {
         return $(element).parent().siblings("div").children().first().text().trim() === key;
       })
@@ -138,8 +138,8 @@ $(document).ready(function () {
   }
 
   document.getElementById("clear_cart").addEventListener("click", function (event) {
-    localStorage.setItem('items', JSON.stringify({})); 
-    localStorage.setItem('user_items', JSON.stringify({})); 
+    localStorage.setItem('items', JSON.stringify({}));
+    localStorage.setItem('user_items', JSON.stringify({}));
     set_items();
     location.reload();
   });
@@ -164,11 +164,11 @@ function ToCart(foodNameClicked, foodQuantity, foodPrice, amountToAdd) {
     delete items[foodNameClicked];
   }
   else {
-  items[foodNameClicked] = foodQuantity;
+    items[foodNameClicked] = foodQuantity;
   }
 
   if (user === null) {
-  localStorage.setItem("items", JSON.stringify(items));
+    localStorage.setItem("items", JSON.stringify(items));
   } else {
     localStorage.setItem("user_items", JSON.stringify(items));
   }
@@ -242,8 +242,6 @@ function openWhatsapp() {
     return;
   }
 
-  // console.log($('#address'));
-
   if ($("#address")[0].value === "") {
     document.getElementById("error_text").innerHTML = "Please Enter Address";
     show_error();
@@ -302,8 +300,8 @@ function openWhatsapp() {
 
     let wTxtEncoded = encodeURI(wTxt);
     window.open("https://wa.me/972584000183?text=" + wTxtEncoded);
-    if(localStorage.getItem("user_email") !== null){
-      localStorage.setItem('user_items', JSON.stringify({})); 
+    if (localStorage.getItem("user_email") !== null) {
+      localStorage.setItem('user_items', JSON.stringify({}));
       set_items();
     } else {
       localStorage.setItem('items', JSON.stringify({}));
@@ -332,14 +330,19 @@ function set_items() {
         var response = JSON.parse(xhr.responseText);
       } else {
         // Handle errors here
-        console.error("Error:", xhr.statusText);
-        var response = JSON.parse(xhr.responseText);
-        if (response.redirect === "login") {
-          localStorage.removeItem("token");
-          localStorage.removeItem("user_email");
-          localStorage.removeItem("user_name");
-          localStorage.removeItem("user_items");
-          location.replace("login.html");
+        try {
+          console.error("Error:", xhr.statusText);
+          var response = JSON.parse(xhr.responseText);
+          if (response.redirect && response.redirect === "login") {
+            localStorage.removeItem("token");
+            localStorage.removeItem("user_email");
+            localStorage.removeItem("user_name");
+            localStorage.removeItem("user_items");
+            location.replace("login.html");
+          }
+        } catch (e) {
+          console.error(e);
+          alert("No Connection");
         }
       }
     }
@@ -354,7 +357,6 @@ function set_items() {
 function show_error() {
   var interval = setInterval(() => {
     if (document.getElementById("cart_error").style.opacity >= 1) {
-      console.log(document.getElementById("cart_error").style.opacity);
       clearInterval(interval);
     }
     document.getElementById("cart_error").style.opacity = Number(document.getElementById("cart_error").style.opacity) + 0.05;

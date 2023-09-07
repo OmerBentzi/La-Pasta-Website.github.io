@@ -41,6 +41,16 @@ function xmlHttpRequest() {
             } else {
                 // Handle errors here
                 console.error("Error:", xhr.statusText);
+                document.getElementById("contactus_success").style.opacity = 0;
+                document.getElementById("contactus_success").hidden = true;
+                document.getElementById("contactus_error").hidden = false;
+                try {
+                    response = JSON.parse(xhr.responseText);
+                    document.getElementById("error_text").innerHTML = response.status ? response.status : "Failed Request";
+                } catch (e) {
+                    document.getElementById("error_text").innerHTML = "Failed Request";
+                }
+                show("contactus_error");
             }
         }
     };
@@ -52,12 +62,11 @@ function xmlHttpRequest() {
     xhr.send(data);
 }
 
-function show(div){
+function show(div) {
     var interval = setInterval(() => {
         if (document.getElementById(div).style.opacity >= 1) {
-            console.log(document.getElementById(div).style.opacity);
             clearInterval(interval);
         }
         document.getElementById(div).style.opacity = Number(document.getElementById(div).style.opacity) + 0.05;
-    }, 10); 
+    }, 10);
 }
