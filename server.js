@@ -93,7 +93,7 @@ const loginLimiter = rateLimit({
     message: JSON.stringify({ status: 'Too many login requests from this IP, please try again after 15 min' }),
 })
 
-app.post('/log_in', loginLimiter, async (req, res) => {
+app.post('/log_in', async (req, res) => {
     var email = req.body.email;
     var password = req.body.password;
 
@@ -114,7 +114,7 @@ app.post('/log_in', loginLimiter, async (req, res) => {
             const passwordMatch = await bcrypt.compare(password, user.password);
             if (passwordMatch) {
                 const token = generateToken(user);
-
+                loginLimiter.resetKey(req.ip);
                 // If user with the provided email exists
                 // Passwords match, log in successfully
                 console.log("Log In Successfully");
@@ -126,14 +126,19 @@ app.post('/log_in', loginLimiter, async (req, res) => {
                 // Incorrect Email or Password
                 console.log("Incorrect Email or Password");
                 // You can handle the Incorrect Email or Password case here, like showing an error message
-                return res.json({ status: 'Incorrect Email or Password' })
+                loginLimiter(req, res, () => {
+                    return res.json({ status: 'Incorrect Email or Password' });
+                });
             }
         }
         else {
             // Incorrect Email or Password
             console.log("Incorrect Email or Password");
             // You can handle the Incorrect Email or Password case here, like showing an error message
-            return res.json({ status: 'Incorrect Email or Password' })
+            loginLimiter(req, res, () => {
+                return res.json({ status: 'Incorrect Email or Password' });
+            });
+
         }
     });
 });
