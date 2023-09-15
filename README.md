@@ -8,6 +8,7 @@ What so special about the website? is that you have a reservation system that is
 
 
 Live Site : https://omerbentzi.github.io/La-Pasta-Website.github.io/public/index.html
+Presentation :  https://docs.google.com/presentation/d/1iGOCfxEhjT8MBp1SFdoC4p0KR6TVQMuu/edit?usp=sharing&ouid=105416988285618327521&rtpof=true&sd=true
 ## Table of Contents
 
 - [Features](#features)
