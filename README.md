@@ -7,8 +7,7 @@ What so special about the website? is that you have a reservation system that is
 <img src="./public/images/LaPastaLogo.png" alt="LaPasta Logo" width="200">
 
 
-Live Site : https://omerbentzi.github.io/La-Pasta-Website.github.io/public/index.html
-
+Live Site : https://omerbentzi.github.io/La-Pasta-Website.github.io
 ## Table of Contents
 
 - [Features](#features)
